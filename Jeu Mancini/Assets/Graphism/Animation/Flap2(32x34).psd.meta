@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: a0365f3ce72076e419558a39f8eaafae
+guid: 8f15a8e8f16134a4db09f994bcd56770
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8649752251195506861
-    second: Jump(32x34)_0
+      213: -7011373429343181067
+    second: Flap2(32x34)_0
   - first:
-      213: -7711887580706814193
-    second: Jump(32x34)_1
+      213: -4540391490130276133
+    second: Flap2(32x34)_1
   - first:
-      213: -5930547873831995777
-    second: Jump(32x34)_2
+      213: 1956331905484684512
+    second: Flap2(32x34)_2
   - first:
-      213: -3100462543531184395
-    second: Jump(32x34)_3
-  - first:
-      213: -6582454346161155101
-    second: Jump(32x34)_4
-  - first:
-      213: -4118405375986396420
-    second: Jump(32x34)_5
-  - first:
-      213: -7085546446339886132
-    second: Jump(32x34)_6
-  - first:
-      213: -6723862899076834899
-    second: Jump(32x34)_7
-  - first:
-      213: -7387466688432933946
-    second: Jump(32x34)_8
+      213: -7102439029200639191
+    second: Flap2(32x34)_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,11 +55,11 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 173, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -118,12 +103,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump(32x34)_0
+      name: Flap2(32x34)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
+        width: 32
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,19 +117,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35f3b58e728e5f780800000000000000
-      internalID: -8649752251195506861
+      spriteID: 5f6236c830992be90800000000000000
+      internalID: -7011373429343181067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump(32x34)_1
+      name: Flap2(32x34)_1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 0
-        width: 34
+        width: 32
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f07493cca1fd9f490800000000000000
-      internalID: -7711887580706814193
+      spriteID: bd01499eef94df0c0800000000000000
+      internalID: -4540391490130276133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump(32x34)_2
+      name: Flap2(32x34)_2
       rect:
         serializedVersion: 2
-        x: 68
+        x: 64
         y: 0
-        width: 34
+        width: 32
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,8 +159,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f76bbc0512672bda0800000000000000
-      internalID: -5930547873831995777
+      spriteID: 0ec7d21c089462b10800000000000000
+      internalID: 1956331905484684512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flap2(32x34)_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b20a155511f6d90800000000000000
+      internalID: -7102439029200639191
       vertices: []
       indices: 
       edges: []
