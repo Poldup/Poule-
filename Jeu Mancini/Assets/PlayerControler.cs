@@ -9,14 +9,21 @@ public class PlayerControler : MonoBehaviour
     public float maxJumpSpeed;
     public float jumpForce;
     public float jumpDuration;
+    public int plumes;
+    public int comptPlumes;
+
 
 
     private float jumpTimer;
     private bool isJumping;
     private bool isGrounded;
+    private bool onWallRight;
+    private bool onWallLeft;
 
     public Transform groundCheckLeft;
     public Transform groundCheckRight;
+    public Transform wallCheckLeft;
+    public Transform wallCheckRight;
 
     public Rigidbody2D rb;
     private Vector2 velocity = Vector2.zero;
@@ -29,6 +36,8 @@ public class PlayerControler : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position);
+        onWallLeft = Physics2D.OverlapPoint(wallCheckLeft.position);
+        onWallRight = Physics2D.OverlapPoint(wallCheckRight.position);
 
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
@@ -37,24 +46,38 @@ public class PlayerControler : MonoBehaviour
 
     void MovePlayer(float _horizontalMovement)
     {
+        
+        if(onWallLeft)
+        {
+            _horizontalMovement = Mathf.Clamp(_horizontalMovement, 0, 1000);
+        }
+        else if(onWallRight)
+        {
+            _horizontalMovement = Mathf.Clamp(_horizontalMovement, -1000, 0);
+        }
+        
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
     }
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (isGrounded)
         {
+            comptPlumes = plumes;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && comptPlumes > 0)
+        {
+
+            comptPlumes = comptPlumes - 1;
             isJumping = true;
             jumpTimer = jumpDuration;
             rb.velocity = Vector2.zero;
-            print(rb.velocity);
         }
         if(isJumping)
         {
             rb.velocity = transform.up * jumpForce;
             jumpTimer -= Time.deltaTime;
-            print(rb.velocity);
             if (jumpTimer<=0)
             {
                 isJumping = false;
