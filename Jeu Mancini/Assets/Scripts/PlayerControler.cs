@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
+    public Rigidbody2D rb;
+    public Animator animator;
+    public SpriteRenderer sprite;
+    [SerializeField] private LayerMask platformLayerMask;
+
     public float moveSpeed;
     public float maxJumpSpeed;
     public float jumpForce;
@@ -12,36 +17,64 @@ public class PlayerControler : MonoBehaviour
     public int plumes;
     public int comptPlumes;
 
-
+    public Transform groundCheckLeft;
+    public Transform groundCheckRight;
+    public Transform wallCheckUpLeft;
+    public Transform wallCheckDownLeft;
+    public Transform wallCheckUpRight;
+    public Transform wallCheckDownRight;
+    
 
     private float jumpTimer;
     private bool isJumping;
     private bool isGrounded;
     private bool onWallRight;
     private bool onWallLeft;
-
-    public Transform groundCheckLeft;
-    public Transform groundCheckRight;
-    public Transform wallCheckLeft;
-    public Transform wallCheckRight;
-
-    public Rigidbody2D rb;
     private Vector2 velocity = Vector2.zero;
 
-    private void Update()
+    void Update()
     {
         Jump();
+
     }
 
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position);
-        onWallLeft = Physics2D.OverlapPoint(wallCheckLeft.position);
-        onWallRight = Physics2D.OverlapPoint(wallCheckRight.position);
+        isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position,platformLayerMask);
+        
+        
+        /*bool groundedLeft = Physics2D.OverlapPoint(groundCheckLeft.position);
+        bool groundedRight = Physics2D.OverlapPoint(groundCheckRight.position);
+        isGrounded = groundedLeft | groundedRight;*/
+
+        onWallLeft = Physics2D.OverlapArea(wallCheckDownLeft.position, wallCheckUpLeft.position,platformLayerMask);
+        //onWallLeft = Physics2D.OverlapPoint(wallCheckLeft.position);
+        //onWallRight = Physics2D.OverlapPoint(wallCheckRight.position);
+        onWallRight = Physics2D.OverlapArea(wallCheckDownRight.position, wallCheckUpRight.position,platformLayerMask);
+
+
 
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
         MovePlayer(horizontalMovement);
+
+        Flip(rb.velocity.x);
+
+        float absVelocity = Mathf.Abs(rb.velocity.x);
+        animator.SetFloat("Speed", absVelocity);
+        animator.SetBool("Grounded", isGrounded);
+    }
+
+    void Flip(float _velocity)
+    {
+        if(_velocity > 0.1)
+        {
+            sprite.flipX = true;
+        }
+        else if(_velocity < -0.1)
+        {
+            sprite.flipX = false;
+        }
     }
 
     void MovePlayer(float _horizontalMovement)
@@ -73,6 +106,7 @@ public class PlayerControler : MonoBehaviour
             isJumping = true;
             jumpTimer = jumpDuration;
             rb.velocity = Vector2.zero;
+            animator.SetTrigger("Jump");
         }
         if(isJumping)
         {
