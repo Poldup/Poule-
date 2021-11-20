@@ -43,6 +43,13 @@ public class PlayerControler : MonoBehaviour
     private bool onWallLeftRel;
     private Vector2 velocity = Vector2.zero;
 
+    public static PlayerControler Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Update()
     {
         Jump();
@@ -118,6 +125,11 @@ public class PlayerControler : MonoBehaviour
         //application du mouvement horizontal au rigibody avec un smoothdamp, une accélération légèrement progressive
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
+    }
+
+    public void AddPlume()
+    {
+        comptPlumes += 1;
     }
 
     void Jump()
