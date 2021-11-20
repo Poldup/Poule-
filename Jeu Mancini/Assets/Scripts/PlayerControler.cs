@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
+    public GameObject poule;
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer sprite;
@@ -14,6 +15,11 @@ public class PlayerControler : MonoBehaviour
     public float maxJumpSpeed;
     public float jumpForce;
     public float jumpDuration;
+    public float longJumpDuration;
+    public float glideSpeed;
+    public float glideTimer;
+    public float fallMultiplier;
+    public float maxFallSpeed;
     public int plumes;
     public int comptPlumes;
 
@@ -23,64 +29,84 @@ public class PlayerControler : MonoBehaviour
     public Transform wallCheckDownLeft;
     public Transform wallCheckUpRight;
     public Transform wallCheckDownRight;
-    
+
 
     private float jumpTimer;
+    private float currentGlideTimer;
+    private float canJumpAgain = 0.2f;
+
     private bool isJumping;
     private bool isGrounded;
     private bool onWallRight;
     private bool onWallLeft;
+    private bool onWallRightRel;
+    private bool onWallLeftRel;
     private Vector2 velocity = Vector2.zero;
 
     void Update()
     {
         Jump();
-
+        Glide();
     }
 
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position,platformLayerMask);
-        
-        
-        /*bool groundedLeft = Physics2D.OverlapPoint(groundCheckLeft.position);
-        bool groundedRight = Physics2D.OverlapPoint(groundCheckRight.position);
-        isGrounded = groundedLeft | groundedRight;*/
-
-        onWallLeft = Physics2D.OverlapArea(wallCheckDownLeft.position, wallCheckUpLeft.position,platformLayerMask);
-        //onWallLeft = Physics2D.OverlapPoint(wallCheckLeft.position);
-        //onWallRight = Physics2D.OverlapPoint(wallCheckRight.position);
-        onWallRight = Physics2D.OverlapArea(wallCheckDownRight.position, wallCheckUpRight.position,platformLayerMask);
-
-
-
-        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
-
-        MovePlayer(horizontalMovement);
+        SurroundingDetector();
 
         Flip(rb.velocity.x);
 
+        MovePlayer();
+
+        AnimTriggers();
+        
+    }
+
+    void AnimTriggers()
+    {
+        //envoie les triggers à l'animator
         float absVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("Speed", absVelocity);
         animator.SetBool("Grounded", isGrounded);
     }
 
-    void Flip(float _velocity)
+
+    void SurroundingDetector()
     {
-        if(_velocity > 0.1)
-        {
-            sprite.flipX = true;
-        }
-        else if(_velocity < -0.1)
-        {
-            sprite.flipX = false;
-        }
+        //Détecte le sol et les murs graces aux gameobjects (les points verts autour de la poule)
+        isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position, platformLayerMask);
+        onWallLeftRel = Physics2D.OverlapArea(wallCheckDownLeft.position, wallCheckUpLeft.position, platformLayerMask);
+        onWallRightRel = Physics2D.OverlapArea(wallCheckDownRight.position, wallCheckUpRight.position, platformLayerMask);
     }
 
-    void MovePlayer(float _horizontalMovement)
+    void Flip(float _velocity)
     {
+        bool sensGauche=true;
+        //si la poule se déplace vers la droite ou la gauche, son gameobject se tourne dans cette direction, les détecteurs de murs relatifs sont permutés si besoin car ils s'inversent lors du flip
+        if(_velocity > 0.1)
+        {
+            poule.transform.localScale = new Vector3(-1, 1, 1);
+            sensGauche = true;
+        }
         
-        if(onWallLeft)
+        else if(_velocity < -0.1)
+        {
+            poule.transform.localScale = new Vector3(1, 1, 1);
+            sensGauche = false;
+        }
+
+        if(sensGauche)
+        {onWallLeft = onWallRightRel; onWallRight = onWallLeftRel;}
+        else
+        {onWallRight = onWallRightRel; onWallLeft = onWallLeftRel;}
+    }
+
+    void MovePlayer()
+    {
+        // horizontalmouvement correspond à l'input de l'axe horizontal (correspond à z/d ou </>) x movespeed x le temps qui passe
+        float _horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        
+        //S'il y a un mur à gauche, le mouvement vertical est limité vers la droite, et réciproquement
+        if (onWallLeft)
         {
             _horizontalMovement = Mathf.Clamp(_horizontalMovement, 0, 1000);
         }
@@ -89,40 +115,103 @@ public class PlayerControler : MonoBehaviour
             _horizontalMovement = Mathf.Clamp(_horizontalMovement, -1000, 0);
         }
         
+        //application du mouvement horizontal au rigibody avec un smoothdamp, une accélération légèrement progressive
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
     }
 
     void Jump()
     {
+        
+        //Quand la poule est au sol, le compteur de plumes disponibles revient  à zéro et le compteur pour sauter à nouveau aussi
         if (isGrounded)
         {
             comptPlumes = plumes;
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && comptPlumes > 0)
-        {
+            canJumpAgain = 0;
 
-            comptPlumes = comptPlumes - 1;
-            isJumping = true;
-            jumpTimer = jumpDuration;
-            rb.velocity = Vector2.zero;
-            animator.SetTrigger("Jump");
         }
-        if(isJumping)
+        
+        //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
+        if (Input.GetKeyDown(KeyCode.Space) && comptPlumes > 0 && canJumpAgain==0)
         {
+            //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
+            canJumpAgain = 0.2f;
+            comptPlumes = comptPlumes - 1;
+
+            //la poule passe en état de saut, le timer de saut commence à zéro, trigger de saut pour l'animator
+            isJumping = true;
+            jumpTimer = 0;
+            animator.SetTrigger("Jump");
+
+            //rb.velocity = Vector2.zero; (NE SERT A RIEN ?)
+
+        }
+        
+        //état de saut
+        if (isJumping)
+        {
+            //la vitesse verticale de la poule est multiplié par jumpForce, le timer de saut augmente avec le temps
             rb.velocity = transform.up * jumpForce;
-            jumpTimer -= Time.deltaTime;
-            if (jumpTimer<=0)
+            jumpTimer += Time.deltaTime;
+            
+            //Si le joueur ne maintient pas espace au delà du temps de saut, la vitesse verticale retombe à maxjumpspeed, la poule va bientôt redescendre
+            if (jumpTimer >= jumpDuration && !Input.GetKey(KeyCode.Space))
+            {
+                isJumping = false; 
+                rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y * 1.1f, 0, maxJumpSpeed));
+            }
+            //à la fin du temps de saut long (même si le joueur maintient espace), la vitesse verticale retombe à maxjumpspeed, la poule va bientôt redescendre
+            else if (jumpTimer >= longJumpDuration)
             {
                 isJumping = false;
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y * 1.1f, 0, maxJumpSpeed));
             }
         }
+        
+        //Si le timer pour sauter à nouveau est supérieur à 0, il diminue avec le temps jusqu'à zéro
+        if(canJumpAgain>0)
+        {
+            canJumpAgain = Mathf.Clamp(canJumpAgain - Time.deltaTime, 0, 0.2f);
+
+        }
     }
+
+    void Glide()
+    {
+        
+        if(isGrounded)
+        {
+            currentGlideTimer = glideTimer;
+        }
+        
+        if (!isGrounded && currentGlideTimer>0 && !Input.GetKey(KeyCode.Space) && (Input.GetKey("z") | Input.GetKey("up")))
+        {
+            rb.velocity = new Vector2 (rb.velocity.x, - glideSpeed);
+            animator.SetTrigger("Gliding");
+            currentGlideTimer = Mathf.Clamp(currentGlideTimer - Time.deltaTime, 0, glideTimer);
+            if (currentGlideTimer < glideTimer / 3)
+            {
+                animator.SetTrigger("EndGlide");
+            }
+        }
+        else
+        {
+            animator.SetTrigger("StopGlide");
+        }
+        if(!isGrounded && currentGlideTimer==0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y * 1.1f, maxFallSpeed, 0));
+            animator.SetTrigger("Falling");
+        }
+    }
+
+
 }
 
 
-/*public float speed = 10.5f;
+/* CODE DU COURS
+ * 
+ * public float speed = 10.5f;
 public float jumpStrength = 50.2f;
 public Rigidbody2D rb;
 
