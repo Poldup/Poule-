@@ -132,7 +132,7 @@ public class PlayerControler : MonoBehaviour
         }
         
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
-        if (Input.GetKeyDown(KeyCode.Space) && comptPlumes > 0 && canJumpAgain==0)
+        if (Input.GetKeyDown(KeyCode.Space) && comptPlumes > 0 && canJumpAgain==0 && currentGlideTimer>0)
         {
             //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
