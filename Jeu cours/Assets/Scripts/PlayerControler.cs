@@ -22,6 +22,9 @@ public class PlayerControler : MonoBehaviour
     public float maxFallSpeed;
     public int plumes;
     public int comptPlumes;
+    public KeyCode toucheSaut;
+    public KeyCode toucheGlide;
+
 
     public Transform groundCheckLeft;
     public Transform groundCheckRight;
@@ -30,12 +33,17 @@ public class PlayerControler : MonoBehaviour
     public Transform wallCheckUpRight;
     public Transform wallCheckDownRight;
 
-
+    private float axeHorizontal;
     private float jumpTimer;
     private float currentGlideTimer;
     private float canJumpAgain = 0.2f;
+    private float playerXSpeed;
 
+    private bool jumpKeyGot;
+    private bool jumpKeyGotDown;
+    private bool glideKeyGot;
     private bool isJumping;
+    private bool isGliding;
     private bool isGrounded;
     private bool onWallRight;
     private bool onWallLeft;
@@ -52,21 +60,32 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
-        Jump();
-        Glide();
+        GetKeys();
+        IsJumping();
+        IsGliding();
+        AnimTriggers();
     }
 
     void FixedUpdate()
     {
         SurroundingDetector();
-
         Flip(rb.velocity.x);
 
         MovePlayer();
-
-        AnimTriggers();
+        Jump();
+        Glide();
         
     }
+
+    void GetKeys()
+    {
+        jumpKeyGot = Input.GetKey(toucheSaut);
+        jumpKeyGotDown = Input.GetKeyDown(toucheSaut);
+        glideKeyGot = Input.GetKey(toucheGlide);
+        axeHorizontal = Input.GetAxis("Horizontal");
+    }
+
+    
 
     void AnimTriggers()
     {
@@ -132,20 +151,10 @@ public class PlayerControler : MonoBehaviour
         comptPlumes += 1;
     }*/
 
-    void Jump()
+    void IsJumping()
     {
-        
-        //Quand la poule est au sol, le compteur de plumes disponibles revient  à zéro et le compteur pour sauter à nouveau aussi
-        if (isGrounded)
-        {
-            GameManager.Instance.ResetPlumes();
-            comptPlumes = GameManager.Instance.goldenPlumes + GameManager.Instance.plumes;
-            canJumpAgain = 0;
-
-        }
-        
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
-        if (Input.GetKeyDown(KeyCode.Space) && (comptPlumes > 0 | isGrounded) && canJumpAgain==0 && currentGlideTimer>0)
+        if (Input.GetKeyDown(KeyCode.Space) && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0)
         {
             //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
@@ -157,6 +166,19 @@ public class PlayerControler : MonoBehaviour
             animator.SetTrigger("Jump");
 
             //rb.velocity = Vector2.zero; (NE SERT A RIEN ?)
+
+        }
+    }
+
+    void Jump()
+    {
+        
+        //Quand la poule est au sol, le compteur de plumes disponibles revient  à zéro et le compteur pour sauter à nouveau aussi
+        if (isGrounded)
+        {
+            GameManager.Instance.ResetPlumes();
+            comptPlumes = GameManager.Instance.goldenPlumes + GameManager.Instance.plumes;
+            canJumpAgain = 0;
 
         }
         
@@ -189,6 +211,18 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    void IsGliding()
+    {
+        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !Input.GetKeyDown(KeyCode.Space) && (Input.GetKey("z") | Input.GetKey("up")))
+        {
+            isGliding = true;
+        }
+        else
+        {
+            isGliding = false;
+        }
+    }
+
     void Glide()
     {
         
@@ -197,7 +231,7 @@ public class PlayerControler : MonoBehaviour
             currentGlideTimer = glideTimer;
         }
         
-        if (rb.velocity.y< 0 && !isGrounded && currentGlideTimer>0 && !Input.GetKeyDown(KeyCode.Space) && (Input.GetKey("z") | Input.GetKey("up")))
+        if (isGliding)
         {
             rb.velocity = new Vector2 (rb.velocity.x, - glideSpeed);
             animator.SetTrigger("Gliding");
