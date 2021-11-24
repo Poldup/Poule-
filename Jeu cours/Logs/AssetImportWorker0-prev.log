@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.22f1 (e1a7f79fd887) revision 14788599'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19043.1348; Version 2009; 64bit' Language: 'fr' Physical Memory: 7953 MB
+OS: 'Windows 10 Home; OS build 19042.1348; Version 2009; 64bit' Language: 'fr' Physical Memory: 8102 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -11,113 +11,112 @@ C:\Program Files\Unity\Hub\Editor\2020.3.22f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/wamp64/www/Séb/Jeu unity ft Leopold/jeu-unity/Jeu cours
+C:/Users/chret/Documents/GitHub/jeu-unity/Jeu cours
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-28426
-Successfully changed project path to: C:/wamp64/www/Séb/Jeu unity ft Leopold/jeu-unity/Jeu cours
-C:/wamp64/www/Séb/Jeu unity ft Leopold/jeu-unity/Jeu cours
+49498
+Successfully changed project path to: C:/Users/chret/Documents/GitHub/jeu-unity/Jeu cours
+C:/Users/chret/Documents/GitHub/jeu-unity/Jeu cours
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 88.02 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 285.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.22f1 (e1a7f79fd887)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/wamp64/www/Séb/Jeu unity ft Leopold/jeu-unity/Jeu cours/Assets
+[Subsystems] Discovering subsystems at path C:/Users/chret/Documents/GitHub/jeu-unity/Jeu cours/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics (ID=0x106)
     Vendor:   
-    VRAM:     5991 MB
-    Driver:   30.0.14.7212
+    VRAM:     128 MB
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56456
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003481 seconds.
+Registered in 0.008362 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 139.23 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 215.14 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.399 seconds
+- Completed reload, in  4.711 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2399ms)
-		BeginReloadAssembly (72ms)
+	ReloadAssembly (4712ms)
+		BeginReloadAssembly (230ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1041ms)
-			LoadAssemblies (70ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (2042ms)
+			LoadAssemblies (222ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (232ms)
+			SetupTypeCache (607ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (605ms)
+			RebuildScriptCaches (120ms)
+			SetupLoadedEditorAssemblies (847ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (139ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (293ms)
-				ProcessInitializeOnLoadMethodAttributes (102ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (215ms)
+				BeforeProcessingInitializeOnLoad (56ms)
+				ProcessInitializeOnLoadAttributes (447ms)
+				ProcessInitializeOnLoadMethodAttributes (110ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.032696 seconds.
+Registered in 0.015561 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 71.25 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 229.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.500 seconds
+- Completed reload, in  5.800 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2502ms)
-		BeginReloadAssembly (236ms)
+	ReloadAssembly (5803ms)
+		BeginReloadAssembly (672ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (28ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		EndReloadAssembly (2048ms)
-			LoadAssemblies (215ms)
+			CreateAndSetChildDomain (57ms)
+		EndReloadAssembly (4865ms)
+			LoadAssemblies (512ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (630ms)
+			SetupTypeCache (1551ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (71ms)
-			SetupLoadedEditorAssemblies (923ms)
+			RebuildScriptCaches (204ms)
+			SetupLoadedEditorAssemblies (1874ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (71ms)
-				BeforeProcessingInitializeOnLoad (110ms)
-				ProcessInitializeOnLoadAttributes (651ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
-				AfterProcessingInitializeOnLoad (21ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (230ms)
+				BeforeProcessingInitializeOnLoad (403ms)
+				ProcessInitializeOnLoadAttributes (1068ms)
+				ProcessInitializeOnLoadMethodAttributes (124ms)
+				AfterProcessingInitializeOnLoad (31ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (21ms)
+			AwakeInstancesAfterBackupRestoration (31ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
-Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.18 seconds
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2234 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.7 MB.
-System memory in use after: 98.8 MB.
+Unloading 2254 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.7 MB.
 
-Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2669.
-Total: 6.333100 ms (FindLiveObjects: 0.433300 ms CreateObjectMapping: 0.233600 ms MarkObjects: 5.534600 ms  DeleteObjects: 0.129300 ms)
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2689.
+Total: 10.518400 ms (FindLiveObjects: 0.341900 ms CreateObjectMapping: 0.182800 ms MarkObjects: 9.813200 ms  DeleteObjects: 0.177800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -126,88 +125,669 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Audio/techno chicken.mp3
-  artifactKey: Guid(1c05c8a6b2effb84cb3c4f06e97dbac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Audio/techno chicken.mp3 using Guid(1c05c8a6b2effb84cb3c4f06e97dbac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b70dc3b1633c7c420c705bcb10a80db') in 0.202400 seconds 
-  Import took 0.207809 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008162 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.002 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2003ms)
-		BeginReloadAssembly (208ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		EndReloadAssembly (1678ms)
-			LoadAssemblies (172ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (594ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (97ms)
-			SetupLoadedEditorAssemblies (608ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (166ms)
-				ProcessInitializeOnLoadAttributes (394ms)
-				ProcessInitializeOnLoadMethodAttributes (24ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.04 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2230 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 100.6 MB.
-System memory in use after: 100.7 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2700.
-Total: 5.396000 ms (FindLiveObjects: 0.346700 ms CreateObjectMapping: 0.190700 ms MarkObjects: 4.817600 ms  DeleteObjects: 0.039200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 633.530728 seconds.
-  path: Assets/Animation
-  artifactKey: Guid(8097c035dda8c584e8738c96fe3439ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation using Guid(8097c035dda8c584e8738c96fe3439ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '703e91bb7e9171afa1909688bc6fc0a3') in 0.037697 seconds 
-  Import took 0.050529 seconds .
+  path: Assets/Visuals/Animation
+  artifactKey: Guid(d5426eb334ce89d46b6f1c273337fe9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation using Guid(d5426eb334ce89d46b6f1c273337fe9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ce57fa1a9e18ef962f4e8eddb43b27b') in 0.182250 seconds 
+  Import took 0.202952 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.842362 seconds.
-  path: Assets/Animation/Objet animé
+  Time since last request: 1.010132 seconds.
+  path: Assets/Visuals/Animation/Fall2.psd
+  artifactKey: Guid(79538b555f22bed43b9a3ce70117e804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation/Fall2.psd using Guid(79538b555f22bed43b9a3ce70117e804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b5d52e12cb22ccab66f378f2f720f91') in 0.516475 seconds 
+  Import took 0.523800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000793 seconds.
+  path: Assets/Visuals/Animation/Flap2(32x34).psd
+  artifactKey: Guid(8f15a8e8f16134a4db09f994bcd56770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation/Flap2(32x34).psd using Guid(8f15a8e8f16134a4db09f994bcd56770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45c0b24806ceda746f17c9f44bc1790d') in 0.330870 seconds 
+  Import took 0.340355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000507 seconds.
+  path: Assets/Visuals/Animation/Flap4(32x34).psd
+  artifactKey: Guid(261756d6bfddc394eb1d3c19451eba6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation/Flap4(32x34).psd using Guid(261756d6bfddc394eb1d3c19451eba6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe9b8d4e109a6f794d0cd9b9564e274e') in 0.316677 seconds 
+  Import took 0.363588 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000430 seconds.
+  path: Assets/Visuals/Animation/Flap3(32x34).psd
+  artifactKey: Guid(738c8d0be55924043852498f77519e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation/Flap3(32x34).psd using Guid(738c8d0be55924043852498f77519e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '315d188447deaff46a8d7c5139144664') in 0.235033 seconds 
+  Import took 0.290803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000439 seconds.
+  path: Assets/Visuals/Animation/plume.psd
+  artifactKey: Guid(0897f9fd975faa6409794d130992b7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation/plume.psd using Guid(0897f9fd975faa6409794d130992b7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0e227806339690332cb3a0660114d16') in 0.338472 seconds 
+  Import took 0.349136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/Visuals/Animation/Flap(32x34).psd
+  artifactKey: Guid(a0365f3ce72076e419558a39f8eaafae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Animation/Flap(32x34).psd using Guid(a0365f3ce72076e419558a39f8eaafae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d0d4efc3e3b14623640c0beae36b8e') in 0.249207 seconds 
+  Import took 0.298586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.151051 seconds.
+  path: Assets/Visuals/Sprites Animations
+  artifactKey: Guid(d5426eb334ce89d46b6f1c273337fe9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Sprites Animations using Guid(d5426eb334ce89d46b6f1c273337fe9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c583c78a022a36c66561e5ef62bfd86') in 0.196140 seconds 
+  Import took 0.246384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.509206 seconds.
+  path: Assets/Visuals/Objet animé/Objet animé.prefab
+  artifactKey: Guid(db5eafeda7428e94098141f5a51b3022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Objet animé/Objet animé.prefab using Guid(db5eafeda7428e94098141f5a51b3022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20625dfbfa2aeae4c1020063d4eea30a') in 0.286981 seconds 
+  Import took 0.319353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/Visuals/Objet animé
+  artifactKey: Guid(334bf1abd844e104998e3c7a9d90ca90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Objet animé using Guid(334bf1abd844e104998e3c7a9d90ca90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69521030b1df57234f712775eafbd73d') in 0.200889 seconds 
+  Import took 0.231551 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.814245 seconds.
+  path: Assets/Visuals/Palette/arrière.prefab
+  artifactKey: Guid(3c703a50cea76f347b5bfa7763ed78ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/arrière.prefab using Guid(3c703a50cea76f347b5bfa7763ed78ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f908d6e70e7f3dc7a672bac1329db73') in 0.477777 seconds 
+  Import took 0.489367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000470 seconds.
+  path: Assets/Visuals/Palette
+  artifactKey: Guid(9928b55b0e357c04fb549b6f6f48a9c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette using Guid(9928b55b0e357c04fb549b6f6f48a9c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e130795337adfa1154a45a2b9a0b5804') in 0.217563 seconds 
+  Import took 0.239643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000439 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_2.asset
+  artifactKey: Guid(911ee79f5fe51a64c9721a470b059d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_2.asset using Guid(911ee79f5fe51a64c9721a470b059d5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81583c811cceec10b50ad7e7e6f5bc1f') in 0.268153 seconds 
+  Import took 0.292001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000450 seconds.
+  path: Assets/Visuals/Palette/Confetti (16x16)_0.asset
+  artifactKey: Guid(669171b25029c0249909caaf92754c6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Confetti (16x16)_0.asset using Guid(669171b25029c0249909caaf92754c6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3b9d013e9f5f34186279d0b7b47e63') in 0.232438 seconds 
+  Import took 0.260819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000790 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_10.asset
+  artifactKey: Guid(d7ae2bdd571246049b3f4fc4425193a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_10.asset using Guid(d7ae2bdd571246049b3f4fc4425193a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9961c5b178cf5e32126c2b6179de56a') in 0.249586 seconds 
+  Import took 0.257554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000459 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_12.asset
+  artifactKey: Guid(61176b3f62361d64781e088a26972a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_12.asset using Guid(61176b3f62361d64781e088a26972a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '057649447de31ef4c335848684d44b0d') in 0.227983 seconds 
+  Import took 0.278247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000459 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_9.asset
+  artifactKey: Guid(485f245f366a3374bbecddc5c94773e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_9.asset using Guid(485f245f366a3374bbecddc5c94773e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa9c64d7afe310f695e94a9a2af5a0e4') in 0.274410 seconds 
+  Import took 0.331837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000593 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_13.asset
+  artifactKey: Guid(769d1a0927cb2704eaad1f81e806c9f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_13.asset using Guid(769d1a0927cb2704eaad1f81e806c9f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8684f564004ebd27cdd1fe8dbb168a1e') in 0.252167 seconds 
+  Import took 0.308741 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000466 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_14.asset
+  artifactKey: Guid(afb110b5eeb031d4588ea154d240a51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_14.asset using Guid(afb110b5eeb031d4588ea154d240a51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ae7876378025c44568e1c4bee39857b') in 0.292067 seconds 
+  Import took 0.387088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001126 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_2.asset
+  artifactKey: Guid(1598b3dbbcc3cb34a8f062cb4f302ad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_2.asset using Guid(1598b3dbbcc3cb34a8f062cb4f302ad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '113b9b8468a185ef308db8401a88606f') in 0.235395 seconds 
+  Import took 0.284699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000435 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_18.asset
+  artifactKey: Guid(a4f2da379b1bbad43baa085808584895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_18.asset using Guid(a4f2da379b1bbad43baa085808584895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e367e98bc8831bee666652fd80016cd2') in 0.186940 seconds 
+  Import took 0.217479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000975 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_11.asset
+  artifactKey: Guid(3fa785fb0de653d439ee62b78c6f7c91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_11.asset using Guid(3fa785fb0de653d439ee62b78c6f7c91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b03426513d8c5422d9b5dbe1f48c5008') in 0.226901 seconds 
+  Import took 0.281575 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001094 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_6.asset
+  artifactKey: Guid(588d9162a6d582e4eac148a04b694174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_6.asset using Guid(588d9162a6d582e4eac148a04b694174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c9891ffad234abc415569eef04dd8ed') in 0.231369 seconds 
+  Import took 0.389018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001233 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_5.asset
+  artifactKey: Guid(f9687aea3b87891448a0f482d72f60b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_5.asset using Guid(f9687aea3b87891448a0f482d72f60b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b00507de426063ac18bfa143daeff26') in 0.180388 seconds 
+  Import took 0.260797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001042 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_9.asset
+  artifactKey: Guid(7964bd1aca6379a4695882f24fd638d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_9.asset using Guid(7964bd1aca6379a4695882f24fd638d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3aede6e1a07a39673941b1db1e71c1') in 0.230109 seconds 
+  Import took 0.301109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001056 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_38.asset
+  artifactKey: Guid(a53bcbe12f0da1341874ca8bbe2186c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_38.asset using Guid(a53bcbe12f0da1341874ca8bbe2186c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94bdcf1a4e8eb0e60615000d47efd809') in 0.198886 seconds 
+  Import took 0.268024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001036 seconds.
+  path: Assets/Visuals/Palette/Confetti (16x16)_3.asset
+  artifactKey: Guid(8d4c98fee8590d941a8a248dd2dfbf63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Confetti (16x16)_3.asset using Guid(8d4c98fee8590d941a8a248dd2dfbf63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7de84b44e8dec760573ae06e2204717') in 0.193114 seconds 
+  Import took 0.317333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018711 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_15.asset
+  artifactKey: Guid(ad53561c6499b11449643ae2799a53ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_15.asset using Guid(ad53561c6499b11449643ae2799a53ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '090cbce1e0d0d4b5df450b7f609bf13e') in 0.199433 seconds 
+  Import took 0.235063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.029196 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_0.asset
+  artifactKey: Guid(10f8aa0aa21b90f4aaaa79e9d3366610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_0.asset using Guid(10f8aa0aa21b90f4aaaa79e9d3366610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4e3e18a0db618cc3077df4d9001b410') in 0.229516 seconds 
+  Import took 0.296665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001651 seconds.
+  path: Assets/Visuals/Palette/Confetti (16x16)_4.asset
+  artifactKey: Guid(0de20139132310348ae6e41ed06ebf4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Confetti (16x16)_4.asset using Guid(0de20139132310348ae6e41ed06ebf4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '371ecf92f308fb7161eefe0722ff6e78') in 0.169334 seconds 
+  Import took 0.196352 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000565 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_34.asset
+  artifactKey: Guid(e43c3d271c6649843a8bc25e14936ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_34.asset using Guid(e43c3d271c6649843a8bc25e14936ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f1a467abad9379123d055de81102f45') in 0.154140 seconds 
+  Import took 0.188630 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000472 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_8.asset
+  artifactKey: Guid(be28cd4598ab57a4cbf748f56bc4507b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_8.asset using Guid(be28cd4598ab57a4cbf748f56bc4507b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a4b97d02771d382e4183fcc3e349b58') in 0.188589 seconds 
+  Import took 0.201834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000460 seconds.
+  path: Assets/Visuals/Palette/Confetti (16x16)_1.asset
+  artifactKey: Guid(c33382dfdf2f80441ba83af9cdfd2425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Confetti (16x16)_1.asset using Guid(c33382dfdf2f80441ba83af9cdfd2425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14364be09921b534e8e78b45dbcc3339') in 0.212638 seconds 
+  Import took 0.273523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001049 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_20.asset
+  artifactKey: Guid(721b6d46429c4ed418d53c5c74e29acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_20.asset using Guid(721b6d46429c4ed418d53c5c74e29acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc23ac99e0cfe6a2fb3c5c35ece7085f') in 0.194379 seconds 
+  Import took 0.275676 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064011 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_24.asset
+  artifactKey: Guid(ed24806db2318c941b158b369977670e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_24.asset using Guid(ed24806db2318c941b158b369977670e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58b668038d255b896ffa990d70b75acf') in 0.195064 seconds 
+  Import took 0.234525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001087 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_19.asset
+  artifactKey: Guid(675f4a617b417b14892061936684bf21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_19.asset using Guid(675f4a617b417b14892061936684bf21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3703420443967bbe3dc3b941ba85d65e') in 0.207114 seconds 
+  Import took 0.296984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001057 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_7.asset
+  artifactKey: Guid(51bf7e05bc4504c438217530da887a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_7.asset using Guid(51bf7e05bc4504c438217530da887a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a603522e8d75274f3ffddda641389fae') in 0.214533 seconds 
+  Import took 0.288267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001057 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_5.asset
+  artifactKey: Guid(2a42acce45f2f0241a3adc21ff9bd426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_5.asset using Guid(2a42acce45f2f0241a3adc21ff9bd426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ff81f6515f44f1c88a7f89b662a2cde') in 0.164344 seconds 
+  Import took 0.257504 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001005 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_8.asset
+  artifactKey: Guid(33cdc14b98e410142922facd07cd188c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_8.asset using Guid(33cdc14b98e410142922facd07cd188c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3447e83a14a2c764de1a4b612d5ecae') in 0.161665 seconds 
+  Import took 0.238862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000450 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_4.asset
+  artifactKey: Guid(eef8002db100a4c4cb3037a6df673f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_4.asset using Guid(eef8002db100a4c4cb3037a6df673f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2105695b27fef4d58995108c299b783') in 0.208082 seconds 
+  Import took 0.245001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000436 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_33.asset
+  artifactKey: Guid(f202285fbe82f3f489ecd9c02b3fe97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_33.asset using Guid(f202285fbe82f3f489ecd9c02b3fe97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3debe38242932297b8fd2f70f54e470c') in 0.209360 seconds 
+  Import took 0.223993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000443 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_3.asset
+  artifactKey: Guid(8c2ee3fd9cd82c7428668dd823eb2085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_3.asset using Guid(8c2ee3fd9cd82c7428668dd823eb2085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6a0fecb857f2d38e15c6e86b42f1601') in 0.233503 seconds 
+  Import took 0.281241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001008 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_35.asset
+  artifactKey: Guid(9be23614037efa1448a742cca4327355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_35.asset using Guid(9be23614037efa1448a742cca4327355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15ca595cd66ce5d5ec4725c97a075bef') in 0.280899 seconds 
+  Import took 0.354307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001117 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_28.asset
+  artifactKey: Guid(b8433fdf5f433ef4a9cb76a0cc7bd9f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_28.asset using Guid(b8433fdf5f433ef4a9cb76a0cc7bd9f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351f0c823e80c75b2abfa426cd47f91c') in 0.234290 seconds 
+  Import took 0.336810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.032646 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_32.asset
+  artifactKey: Guid(9db36d8eda9f3004da6563ae11268fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_32.asset using Guid(9db36d8eda9f3004da6563ae11268fbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8fc93316dca6e20b63d2d83f1d0665f') in 0.130170 seconds 
+  Import took 0.160345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001273 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_22.asset
+  artifactKey: Guid(dbda187bfd779ae4494ede0c85cbbae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_22.asset using Guid(dbda187bfd779ae4494ede0c85cbbae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '679bf07535c030bd0aa464beb846a6e9') in 0.251266 seconds 
+  Import took 0.280425 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001023 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_0.asset
+  artifactKey: Guid(63f8ec6dd34f9304db4a240382d9871e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_0.asset using Guid(63f8ec6dd34f9304db4a240382d9871e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e1eaaa82d421d93628ee7f36364f451') in 0.192470 seconds 
+  Import took 0.314960 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.069020 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_36.asset
+  artifactKey: Guid(5656d4d3ecaf21b4a8dbbc002431ba46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_36.asset using Guid(5656d4d3ecaf21b4a8dbbc002431ba46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6ae03bba032e2e744a6c232545adea9') in 0.211630 seconds 
+  Import took 0.294969 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011766 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_30.asset
+  artifactKey: Guid(9995c691a5b9a874f917ab6219de6503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_30.asset using Guid(9995c691a5b9a874f917ab6219de6503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9582dbce81b93bef3096ebcd479ed390') in 0.161214 seconds 
+  Import took 0.196308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000452 seconds.
+  path: Assets/Visuals/Space
+  artifactKey: Guid(939c63c24f0cf0e479f9a35b707b9f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Space using Guid(939c63c24f0cf0e479f9a35b707b9f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fcbee808348cb47c30546921d4542c3') in 0.232393 seconds 
+  Import took 0.256973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.060290 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_16.asset
+  artifactKey: Guid(e1cbbcc2b21df8742964c34bca029e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_16.asset using Guid(e1cbbcc2b21df8742964c34bca029e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d4af32e95bdd669f530a9e758de2fb9') in 0.207175 seconds 
+  Import took 0.265178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001052 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_27.asset
+  artifactKey: Guid(4d750ac505cf75548acf2e8a58ee6891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_27.asset using Guid(4d750ac505cf75548acf2e8a58ee6891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d24f96768d6457f74fd320c5a1ff7b') in 0.269421 seconds 
+  Import took 0.327736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002793 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_1.asset
+  artifactKey: Guid(5f690868e35ced046a52d4b6ed66241a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_1.asset using Guid(5f690868e35ced046a52d4b6ed66241a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f6afffdf455867dd8dc4b19565ebedd') in 0.180678 seconds 
+  Import took 0.278514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018071 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_37.asset
+  artifactKey: Guid(921b40bf7b818434290397a19e5287ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_37.asset using Guid(921b40bf7b818434290397a19e5287ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9975479a74a786f615ef41bf8d7944') in 0.217980 seconds 
+  Import took 0.257708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006846 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_4.asset
+  artifactKey: Guid(2eb3537cf515a3d4790c13db633aa3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_4.asset using Guid(2eb3537cf515a3d4790c13db633aa3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdb7572920472898486d411308fe7413') in 0.156703 seconds 
+  Import took 0.201405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000485 seconds.
+  path: Assets/Visuals/Palette/Confetti (16x16)_5.asset
+  artifactKey: Guid(6d434de2b8b317144965b45f50b727f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Confetti (16x16)_5.asset using Guid(6d434de2b8b317144965b45f50b727f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6b39378a7587409a70a1fdfb583b6d5') in 0.179930 seconds 
+  Import took 0.218477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001181 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_21.asset
+  artifactKey: Guid(fb8dc183b3cf5c747983c050f8b46c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_21.asset using Guid(fb8dc183b3cf5c747983c050f8b46c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ab3cb72c894d7a53d9a09b63b0ca9c5') in 0.223855 seconds 
+  Import took 0.289421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001234 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_17.asset
+  artifactKey: Guid(5b867fef16913304cb987ba4dd8181e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_17.asset using Guid(5b867fef16913304cb987ba4dd8181e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37eb483e053340de93c4818d19deb9ca') in 0.305324 seconds 
+  Import took 0.377534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001475 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_26.asset
+  artifactKey: Guid(845e89b9cb0b5cc4d8ae6f3b0c7b5136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_26.asset using Guid(845e89b9cb0b5cc4d8ae6f3b0c7b5136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1993b179e0d14e8db0cefc458788f96') in 0.130660 seconds 
+  Import took 0.202925 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001239 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_7.asset
+  artifactKey: Guid(334326867d793104ba2969feaef9facb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_7.asset using Guid(334326867d793104ba2969feaef9facb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0aa2e78249d1775b926be7764c573ec') in 0.214590 seconds 
+  Import took 0.247840 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000455 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_6.asset
+  artifactKey: Guid(2bacb45ecb15ee94dbe316a00904b547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_6.asset using Guid(2bacb45ecb15ee94dbe316a00904b547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e6b22e54490e6c67cfb508519c0d71') in 0.216265 seconds 
+  Import took 0.243924 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000980 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_29.asset
+  artifactKey: Guid(8287ca967408f2449bf802b6c9245227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_29.asset using Guid(8287ca967408f2449bf802b6c9245227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbab86e3705e05e0a593180b46ee6326') in 0.180155 seconds 
+  Import took 0.277539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001547 seconds.
+  path: Assets/Visuals/Palette/Confetti (16x16)_2.asset
+  artifactKey: Guid(ef65be5dd133802408c7ffd2b78346bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Confetti (16x16)_2.asset using Guid(ef65be5dd133802408c7ffd2b78346bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acf5b578747b437136c464255df56bce') in 0.147983 seconds 
+  Import took 0.206079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000496 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_31.asset
+  artifactKey: Guid(b7de3476881ae524e8c67015e7fd678c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_31.asset using Guid(b7de3476881ae524e8c67015e7fd678c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5d1b09cfb706ec0693edbc34ddad649') in 0.220393 seconds 
+  Import took 0.284564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.029398 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_23.asset
+  artifactKey: Guid(be691b8efe8c0a844ae009d967f32648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_23.asset using Guid(be691b8efe8c0a844ae009d967f32648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1947dd4dc1158e65aca1e7adcbe2488a') in 0.168338 seconds 
+  Import took 0.210608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000768 seconds.
+  path: Assets/Visuals/Palette/Sand Mud Ice (16x6)_25.asset
+  artifactKey: Guid(d33966ceef5b3ee4092b1293937e691a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Sand Mud Ice (16x6)_25.asset using Guid(d33966ceef5b3ee4092b1293937e691a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72140e1504af56bba0df141465c9945e') in 0.260331 seconds 
+  Import took 0.302768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019163 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_1.asset
+  artifactKey: Guid(792d185ff9b8bb44d83fd15de73b77c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_1.asset using Guid(792d185ff9b8bb44d83fd15de73b77c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21227f9908f21f925d2214fee6275b12') in 0.155495 seconds 
+  Import took 0.178839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007386 seconds.
+  path: Assets/Visuals/Palette/Terrain (16x16)_3.asset
+  artifactKey: Guid(6b01506f8d32e5945b351df7d2b9704b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Palette/Terrain (16x16)_3.asset using Guid(6b01506f8d32e5945b351df7d2b9704b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '518c67ecca3ce7e4a78d7711ca8aba2c') in 0.157328 seconds 
+  Import took 0.196118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.699548 seconds.
+  path: Assets/Downloaded assets
+  artifactKey: Guid(96b75ea852467834bad01a73b61357da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded assets using Guid(96b75ea852467834bad01a73b61357da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d9711c335be57a9ed5bd786b4893ec8') in 0.208707 seconds 
+  Import took 0.248309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.462514 seconds.
+  path: Assets/Downloaded assets/Pixel Adventure 2
+  artifactKey: Guid(c5ed489cfdc41a749b2c1f9bca99012e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded assets/Pixel Adventure 2 using Guid(c5ed489cfdc41a749b2c1f9bca99012e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d3341ebebe426cc831669ff7f4e7ea3') in 0.175589 seconds 
+  Import took 0.193092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.045832 seconds.
+  path: Assets/Downloaded assets/Pixel Adventure 2/Assets
+  artifactKey: Guid(071d787a6f60c1b4ab902be3a5c0bb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded assets/Pixel Adventure 2/Assets using Guid(071d787a6f60c1b4ab902be3a5c0bb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '842e4eb5bfcb8695f1e2a7af8f9aeb9a') in 0.166944 seconds 
+  Import took 0.196097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.538334 seconds.
+  path: Assets/Downloaded assets/Pixel Adventure 2/Assets/Enemies
+  artifactKey: Guid(e5805f60560d8ea4e833edc54fd915f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded assets/Pixel Adventure 2/Assets/Enemies using Guid(e5805f60560d8ea4e833edc54fd915f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41db37e6c007f23f9850474938c96012') in 0.187447 seconds 
+  Import took 0.207102 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.695038 seconds.
+  path: Assets/Downloaded assets/Pixel Adventure 2/Assets/Enemies/Chicken
+  artifactKey: Guid(e2aaa04595944034cbe70f5697e660ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Downloaded assets/Pixel Adventure 2/Assets/Enemies/Chicken using Guid(e2aaa04595944034cbe70f5697e660ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d6c7f3553cbba4eb0ea01f2ed671c8e') in 0.136294 seconds 
+  Import took 0.159584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.684175 seconds.
+  path: Assets/Visuals
+  artifactKey: Guid(6abad5ff854476a4a80ab46c3f01d888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals using Guid(6abad5ff854476a4a80ab46c3f01d888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28fb6657297354b4e8302a85aca50714') in 0.210979 seconds 
+  Import took 0.239352 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.420489 seconds.
+  path: Assets/Visuals/Sprites
+  artifactKey: Guid(acaf84052ebb34a4f8388dfa50363163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Sprites using Guid(acaf84052ebb34a4f8388dfa50363163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d54653e052459604a96a656c3249ca3') in 0.222671 seconds 
+  Import took 0.244503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.996350 seconds.
+  path: Assets/Visuals/Essai
+  artifactKey: Guid(6180634f835a52a469add4fe9aec0815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Visuals/Essai using Guid(6180634f835a52a469add4fe9aec0815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c76c6f9f1ff1980d569e6b127538e059') in 0.163598 seconds 
+  Import took 0.189562 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.358943 seconds.
+  path: Assets/Prefab/Fraise.prefab
+  artifactKey: Guid(9330af98678338f458c21006f4f12efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Fraise.prefab using Guid(9330af98678338f458c21006f4f12efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13ee0e53d5fb717f336fa6a7879dd5ae') in 0.237666 seconds 
+  Import took 0.247182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/Prefab/Plume.prefab
+  artifactKey: Guid(23069d13bc577d548a9a04e23ff6b389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Plume.prefab using Guid(23069d13bc577d548a9a04e23ff6b389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aaa8a0c12be8994a4f680020f802b43') in 0.261687 seconds 
+  Import took 0.272046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006060 seconds.
+  path: Assets/Prefab/Poule.prefab
+  artifactKey: Guid(9dee910a6bc4a8f4fb5cb1b8f2d31fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Poule.prefab using Guid(9dee910a6bc4a8f4fb5cb1b8f2d31fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7afc01a6df400dad513ae1846f86f38c') in 0.254313 seconds 
+  Import took 0.287871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.637697 seconds.
+  path: Assets/Animation/Items
+  artifactKey: Guid(aa68dc072238c9d4791eadd5a09b7106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Items using Guid(aa68dc072238c9d4791eadd5a09b7106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cc1b4d85c9f094f4c165d6cf0fcd3b8') in 0.160414 seconds 
+  Import took 0.176824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.090978 seconds.
+  path: Assets/Animation/Tiles/Flèche qui bouge vers le haut.asset
+  artifactKey: Guid(2162fb8544a9e12459c866dbd4dc39b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Tiles/Flèche qui bouge vers le haut.asset using Guid(2162fb8544a9e12459c866dbd4dc39b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a8a28808907a5527ccb6395cb5a4338') in 0.190126 seconds 
+  Import took 0.210952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/Animation/Tiles
   artifactKey: Guid(ef3d8b5a6891cb14abfd847c67a1a5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Objet animé using Guid(ef3d8b5a6891cb14abfd847c67a1a5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85da8b0ea17f04dc407242250fc1e185') in 0.019336 seconds 
-  Import took 0.027823 seconds .
+Start importing Assets/Animation/Tiles using Guid(ef3d8b5a6891cb14abfd847c67a1a5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64fbc9793c8d839093636c2fa4a8f766') in 0.218197 seconds 
+  Import took 0.229459 seconds .
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Import Request.
+  Time since last request: 0.005347 seconds.
+  path: Assets/Animation/Tiles/Roue qui tourne.asset
+  artifactKey: Guid(bd70a8e6113cd6640b18f02372cecb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Tiles/Roue qui tourne.asset using Guid(bd70a8e6113cd6640b18f02372cecb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d03e16e365b5fb9c3b7dd27387b7f3e') in 0.182488 seconds 
+  Import took 0.216510 seconds .
+
