@@ -1,5 +1,0 @@
-sceneSetups:
-- path: "Assets/Scenes/Sc\xE8ne seb.unity"
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
