@@ -76,10 +76,13 @@ public class GameManager : MonoBehaviour
         plumes += nb;
         PlayerControler.Instance.comptPlumes += nb;
     }
+    public void AddGPlume(int nb)
+    {
+        goldenPlumes += nb;
+    }
 
     public void ResetPlumes()
     {
-        PlumesCompteur.Instance.PerdrePlume(plumes);
         plumes = 0;
     }
 

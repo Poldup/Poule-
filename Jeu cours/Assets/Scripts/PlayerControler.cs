@@ -24,6 +24,7 @@ public class PlayerControler : MonoBehaviour
     public int comptPlumes;
     public KeyCode toucheSaut;
     public KeyCode toucheGlide;
+    public KeyCode toucheGlide2;
 
 
     public Transform groundCheckLeft;
@@ -64,6 +65,7 @@ public class PlayerControler : MonoBehaviour
         IsJumping();
         IsGliding();
         AnimTriggers();
+        
     }
 
     void FixedUpdate()
@@ -81,7 +83,7 @@ public class PlayerControler : MonoBehaviour
     {
         jumpKeyGot = Input.GetKey(toucheSaut);
         jumpKeyGotDown = Input.GetKeyDown(toucheSaut);
-        glideKeyGot = Input.GetKey(toucheGlide);
+        glideKeyGot = Input.GetKey(toucheGlide) | Input.GetKey(toucheGlide2) ;
         axeHorizontal = Input.GetAxis("Horizontal");
     }
 
@@ -129,7 +131,7 @@ public class PlayerControler : MonoBehaviour
     void MovePlayer()
     {
         // horizontalmouvement correspond à l'input de l'axe horizontal (correspond à z/d ou </>) x movespeed x le temps qui passe
-        float _horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        float _horizontalMovement = axeHorizontal * moveSpeed * Time.fixedDeltaTime;
         
         //S'il y a un mur à gauche, le mouvement vertical est limité vers la droite, et réciproquement
         if (onWallLeft)
@@ -154,11 +156,12 @@ public class PlayerControler : MonoBehaviour
     void IsJumping()
     {
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
-        if (Input.GetKeyDown(KeyCode.Space) && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0)
+        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0)
         {
             //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
-            GameManager.Instance.AddPlume(-1);
+            if (!isGrounded)
+            { GameManager.Instance.AddPlume(-1); }
 
             //la poule passe en état de saut, le timer de saut commence à zéro, trigger de saut pour l'animator
             isJumping = true;
@@ -190,7 +193,7 @@ public class PlayerControler : MonoBehaviour
             jumpTimer += Time.deltaTime;
             
             //Si le joueur ne maintient pas espace au delà du temps de saut, la vitesse verticale retombe à maxjumpspeed, la poule va bientôt redescendre
-            if (jumpTimer >= jumpDuration && !Input.GetKey(KeyCode.Space))
+            if (jumpTimer >= jumpDuration && !jumpKeyGot)
             {
                 isJumping = false; 
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y * 1.1f, 0, maxJumpSpeed));
@@ -213,7 +216,7 @@ public class PlayerControler : MonoBehaviour
 
     void IsGliding()
     {
-        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !Input.GetKeyDown(KeyCode.Space) && (Input.GetKey("z") | Input.GetKey("up")))
+        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot)
         {
             isGliding = true;
         }
@@ -252,8 +255,15 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
 
-}
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
+    }
 
 
 /* CODE DU COURS

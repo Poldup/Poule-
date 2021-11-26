@@ -226,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musique: {fileID: 2009769147}
   fraises: 0
-  goldenPlumes: 0
+  goldenPlumes: 1
   plumes: 3
   musicOn: 0
   menu: {fileID: 1872124726}
@@ -242,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126582557
 GameObject:
@@ -704,7 +704,7 @@ Transform:
   - {fileID: 472787414}
   - {fileID: 513714660}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &309231245 stripped
 GameObject:
@@ -3427,7 +3427,7 @@ Transform:
   m_Children:
   - {fileID: 2009769146}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &961470712
 PrefabInstance:
@@ -4157,7 +4157,7 @@ RectTransform:
   - {fileID: 1872124727}
   - {fileID: 1022197230}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5318,15 +5318,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.3
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.9
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5363,26 +5363,6 @@ PrefabInstance:
     - target: {fileID: 1941485099786222455, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_Name
       value: Poule
-      objectReference: {fileID: 0}
-    - target: {fileID: 1941485099786222455, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
-      propertyPath: m_TagString
-      value: Poule
-      objectReference: {fileID: 0}
-    - target: {fileID: 1941485099786222459, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
-      propertyPath: plumes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1941485099786222459, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
-      propertyPath: jumpDuration
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1941485099786222459, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
-      propertyPath: longJumpDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1941485099786222459, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
-      propertyPath: platformLayerMask.m_Bits
-      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
@@ -5686,7 +5666,7 @@ Transform:
   - {fileID: 1219922256}
   - {fileID: 1981875518}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1818222866 stripped
 Transform:
