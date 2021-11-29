@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public bool musicOn;
     public GameObject menu;
     private bool menuOn;
-    
+    public int lives;
 
 
     private void Awake()
@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
         menu.SetActive(false);
         menuOn = false;
         
+    }
+
+    private void Start()
+    {
+        lives = 3;
     }
 
     void Update()
