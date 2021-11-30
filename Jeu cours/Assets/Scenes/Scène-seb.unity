@@ -1759,11 +1759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1
+      value: 145.7
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3862,6 +3862,7 @@ MonoBehaviour:
   plumes: 3
   musicOn: 0
   menu: {fileID: 1477137686}
+  lives: 0
 --- !u!4 &2066525559
 Transform:
   m_ObjectHideFlags: 0
@@ -4002,6 +4003,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3186722467047562816, guid: 6fee6e2812f77bb4bba2475d4024c6fa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3186722467047562818, guid: 6fee6e2812f77bb4bba2475d4024c6fa, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
       value: 50
@@ -4009,6 +4014,10 @@ PrefabInstance:
     - target: {fileID: 3186722467047562818, guid: 6fee6e2812f77bb4bba2475d4024c6fa, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186722467047562823, guid: 6fee6e2812f77bb4bba2475d4024c6fa, type: 3}
+      propertyPath: knockbackForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3186722467445171768, guid: 6fee6e2812f77bb4bba2475d4024c6fa, type: 3}
       propertyPath: m_RootOrder

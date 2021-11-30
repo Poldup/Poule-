@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationManagement : MonoBehaviour
 {
     public static AnimationManagement Instance;
-    private int lives = GameManager.Instance.lives;
+    private int lives;
     public RuntimeAnimatorController normal;
     public RuntimeAnimatorController life0;
     public RuntimeAnimatorController life1;

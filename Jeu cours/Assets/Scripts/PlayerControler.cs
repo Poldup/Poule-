@@ -21,6 +21,7 @@ public class PlayerControler : MonoBehaviour
     public float glideTimer;
     public float fallMultiplier;
     public float maxFallSpeed;
+    public float knockTime;
     public int comptPlumes;
     public KeyCode toucheSaut;
     public KeyCode toucheGlide;
@@ -50,6 +51,7 @@ public class PlayerControler : MonoBehaviour
     private bool onWallLeft;
     private bool onWallRightRel;
     private bool onWallLeftRel;
+    private bool isKnocked;
     private Vector2 velocity = Vector2.zero;
 
     public static PlayerControler Instance;
@@ -110,13 +112,13 @@ public class PlayerControler : MonoBehaviour
     {
         bool sensGauche=true;
         //si la poule se déplace vers la droite ou la gauche, son gameobject se tourne dans cette direction, les détecteurs de murs relatifs sont permutés si besoin car ils s'inversent lors du flip
-        if(_velocity > 0.1)
+        if(_velocity > 0.1 && knockTime ==0)
         {
             poule.transform.localScale = new Vector3(-1, 1, 1);
             sensGauche = true;
         }
         
-        else if(_velocity < -0.1)
+        else if(_velocity < -0.1 && knockTime==0)
         {
             poule.transform.localScale = new Vector3(1, 1, 1);
             sensGauche = false;
@@ -145,8 +147,12 @@ public class PlayerControler : MonoBehaviour
         
         //application du mouvement horizontal au rigibody avec un smoothdamp, une accélération légèrement progressive
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
+        if (knockTime==0)
+        {
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
+        }
     }
+        
 
     /*public void AddPlume()
     {
@@ -156,7 +162,7 @@ public class PlayerControler : MonoBehaviour
     void IsJumping()
     {
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
-        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0)
+        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTime==0)
         {
             //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
@@ -216,7 +222,7 @@ public class PlayerControler : MonoBehaviour
 
     void IsGliding()
     {
-        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot)
+        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot && knockTime==0)
         {
             isGliding = true;
         }
@@ -255,12 +261,36 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public IEnumerator Knockback (float otherPosX, float knockbackForce)
     {
-        Debug.Log("Game Over");
+        knockTime = 0.5f;
+        int knockDirX;
+        int knockDirY;
+        if (rb.velocity.x>=1)
+        {
+            knockDirX = -1;
+        }
+        else
+        {
+            knockDirX = 1;
+        }
+        if (rb.velocity.y<=0)
+        {
+            knockDirY = 1;
+        }
+        else 
+        { 
+            knockDirY = -1; 
+        }
+        while (knockTime > 0)
+        {
+            knockTime = Mathf.Clamp(knockTime - Time.deltaTime, 0, 10);
+            rb.velocity = (new Vector2(knockDirX * knockbackForce, knockDirY * knockbackForce));
+        }
+        rb.velocity = (new Vector2(rb.velocity.x * 0.1f, rb.velocity.y * 0.1f));
 
-        string sceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+        yield return 0;
     }
 
     }

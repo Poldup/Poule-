@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
             musique.Stop();
             musicPlayed = false;
         }
+
+        if (lives<0)
+        {
+            GameOver();
+        }
     }
 
     public void ActivateMenu()
@@ -100,4 +105,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void TakeDamage()
+    {
+        lives -= 1;
     }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+
+}
