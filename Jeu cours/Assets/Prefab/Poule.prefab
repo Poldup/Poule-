@@ -322,7 +322,7 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  moveSpeed: 250
+  moveSpeed: 275
   maxJumpSpeed: 3
   jumpForce: 20
   jumpDuration: 0.025
@@ -331,6 +331,7 @@ MonoBehaviour:
   glideTimer: 2
   fallMultiplier: 1.5
   maxFallSpeed: -15
+  knockTime: 0
   comptPlumes: 0
   toucheSaut: 32
   toucheGlide: 273
