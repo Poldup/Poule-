@@ -21,7 +21,7 @@ public class PlayerControler : MonoBehaviour
     public float glideTimer;
     public float fallMultiplier;
     public float maxFallSpeed;
-    public float knockTime;
+    
     public int comptPlumes;
     public KeyCode toucheSaut;
     public KeyCode toucheGlide;
@@ -40,6 +40,7 @@ public class PlayerControler : MonoBehaviour
     private float currentGlideTimer;
     private float canJumpAgain = 0.2f;
     private float playerXSpeed;
+    private float knockTimer;
 
     private bool jumpKeyGot;
     private bool jumpKeyGotDown;
@@ -52,6 +53,7 @@ public class PlayerControler : MonoBehaviour
     private bool onWallRightRel;
     private bool onWallLeftRel;
     private bool isKnocked;
+    private bool notKnocked;
     private Vector2 velocity = Vector2.zero;
 
     public static PlayerControler Instance;
@@ -78,6 +80,9 @@ public class PlayerControler : MonoBehaviour
         MovePlayer();
         Jump();
         Glide();
+
+        if (knockTimer>0)
+        { knockTimer = Mathf.Clamp(knockTimer-Time.deltaTime,0,100); }
         
     }
 
@@ -112,13 +117,13 @@ public class PlayerControler : MonoBehaviour
     {
         bool sensGauche=true;
         //si la poule se déplace vers la droite ou la gauche, son gameobject se tourne dans cette direction, les détecteurs de murs relatifs sont permutés si besoin car ils s'inversent lors du flip
-        if(_velocity > 0.1 && knockTime ==0)
+        if(_velocity > 0.1 && notKnocked)
         {
             poule.transform.localScale = new Vector3(-1, 1, 1);
             sensGauche = true;
         }
         
-        else if(_velocity < -0.1 && knockTime==0)
+        else if(_velocity < -0.1 && notKnocked)
         {
             poule.transform.localScale = new Vector3(1, 1, 1);
             sensGauche = false;
@@ -147,9 +152,10 @@ public class PlayerControler : MonoBehaviour
         
         //application du mouvement horizontal au rigibody avec un smoothdamp, une accélération légèrement progressive
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        if (knockTime==0)
+        if (knockTimer==0)
         {
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
+            notKnocked = true;
         }
     }
         
@@ -162,10 +168,11 @@ public class PlayerControler : MonoBehaviour
     void IsJumping()
     {
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
-        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTime==0)
+        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTimer==0)
         {
             //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
+            notKnocked = true;
             if (!isGrounded)
             { GameManager.Instance.AddPlume(-1); }
 
@@ -222,9 +229,10 @@ public class PlayerControler : MonoBehaviour
 
     void IsGliding()
     {
-        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot && knockTime==0)
+        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot && knockTimer==0 && jumpTimer>jumpDuration && !onWallLeft && !onWallRight)
         {
             isGliding = true;
+            notKnocked = true;
         }
         else
         {
@@ -261,7 +269,31 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public IEnumerator Knockback (float otherPosX, float knockbackForce)
+    public void Knockback(float knockTime, float knockForce, Vector2 contact)
+    {
+        knockTimer = knockTime;
+        notKnocked = false;
+
+        if (contact.x>transform.position.x+0.5)
+        {
+            rb.AddForce(new Vector2(-knockForce,knockForce*0.3f));
+        }
+        if (contact.x< transform.position.x - 0.5)
+        {
+            rb.AddForce(new Vector2(knockForce, knockForce * 0.3f));
+        }
+        if (contact.y > transform.position.y +0.23)
+        {
+            rb.AddForce(new Vector2(0, -knockForce));
+        }
+        if (contact.y < transform.position.y -0.75)
+        {
+            rb.AddForce(new Vector2(0, knockForce/3));
+        }
+
+    }
+
+    /*public IEnumerator Knockback (float otherPosX, float knockbackForce)
     {
         knockTime = 0.5f;
         int knockDirX;
@@ -291,7 +323,7 @@ public class PlayerControler : MonoBehaviour
 
 
         yield return 0;
-    }
+    }*/
 
     }
 

@@ -115,7 +115,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
 
         string sceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
 }
