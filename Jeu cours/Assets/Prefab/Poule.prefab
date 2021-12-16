@@ -331,7 +331,6 @@ MonoBehaviour:
   glideTimer: 2
   fallMultiplier: 1.5
   maxFallSpeed: -15
-  knockTime: 0
   comptPlumes: 0
   toucheSaut: 32
   toucheGlide: 273
@@ -385,6 +384,7 @@ PolygonCollider2D:
       - {x: 0.51391786, y: -0.44706637}
       - {x: 0.5653278, y: -0.3166488}
       - {x: 0.5784804, y: -0.23002127}
+      - {x: 0.6072235, y: 0.22905445}
       - {x: 0.5781313, y: 0.248932}
 --- !u!58 &9018800744166404994
 CircleCollider2D:
