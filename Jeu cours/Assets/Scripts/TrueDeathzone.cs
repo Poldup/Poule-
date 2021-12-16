@@ -9,7 +9,7 @@ public class TrueDeathzone : MonoBehaviour
     {
         if (other.CompareTag("Poule"))
         {
-            GameManager.Instance.GameOver();
+            StartCoroutine(GameManager.Instance.LifeLost());
         }
     }
 

@@ -15,14 +15,14 @@ public class ParallaxEffect : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         float temp = (cam.transform.position.x * (1 - parallaxEffect));
         float dist = (cam.transform.position.x * parallaxEffect);
 
-        transform.position = new Vector2(startPos+ dist, transform.position.y);
+        transform.position = new Vector2(startPos + dist, transform.position.y);
 
-        if (temp > startPos + length) startPos += length;
-        else if (temp < startPos - length) startPos -= length;
+        if (temp > startPos + length) { startPos += length; }
+        else if (temp < startPos - length) {startPos -= length; }
     }
 }

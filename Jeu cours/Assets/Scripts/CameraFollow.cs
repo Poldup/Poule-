@@ -9,9 +9,19 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
 
     private Vector3 velocity;
+    public bool activated;
 
+    private void Awake()
+    {
+        activated = true;
+    }
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + offset, ref velocity, timeOffset);
+        activated = GameManager.Instance.camFoActive;
+        if (activated)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + offset, ref velocity, timeOffset);
+        }
+        
     }
 }
