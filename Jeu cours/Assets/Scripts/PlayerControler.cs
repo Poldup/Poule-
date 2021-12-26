@@ -39,8 +39,8 @@ public class PlayerControler : MonoBehaviour
     private float jumpTimer;
     private float currentGlideTimer;
     private float canJumpAgain = 0.2f;
-    private float playerXSpeed;
     private float knockTimer;
+    public float invincibleTimer; 
 
     private bool jumpKeyGot;
     private bool jumpKeyGotDown;
@@ -52,7 +52,6 @@ public class PlayerControler : MonoBehaviour
     private bool onWallLeft;
     private bool onWallRightRel;
     private bool onWallLeftRel;
-    private bool isKnocked;
     private bool notKnocked;
     private Vector2 velocity = Vector2.zero;
 
@@ -69,7 +68,6 @@ public class PlayerControler : MonoBehaviour
         IsJumping();
         IsGliding();
         AnimTriggers();
-        
     }
 
     void FixedUpdate()
@@ -80,6 +78,7 @@ public class PlayerControler : MonoBehaviour
         MovePlayer();
         Jump();
         Glide();
+        invincibleTimer -= Time.fixedDeltaTime;
 
         if (knockTimer>0)
         { knockTimer = Mathf.Clamp(knockTimer-Time.deltaTime,0,100); }
@@ -186,6 +185,11 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    public bool isInvincible()
+    {
+        return invincibleTimer > 0;
+    }
+
     void Jump()
     {
         
@@ -271,26 +275,29 @@ public class PlayerControler : MonoBehaviour
 
     public void Knockback(float knockTime, float knockForce, Vector2 contact)
     {
-        knockTimer = knockTime;
-        notKnocked = false;
+        if (!isInvincible())
+        {
+            invincibleTimer = 2.0f;
+            knockTimer = knockTime;
+            notKnocked = false;
 
-        if (contact.x>transform.position.x+0.5)
-        {
-            rb.AddForce(new Vector2(-knockForce,knockForce*0.3f));
+            if (contact.x > transform.position.x + 0.5)
+            {
+                rb.AddForce(new Vector2(-knockForce, knockForce * 0.3f));
+            }
+            if (contact.x < transform.position.x - 0.5)
+            {
+                rb.AddForce(new Vector2(knockForce, knockForce * 0.3f));
+            }
+            if (contact.y > transform.position.y + 0.23)
+            {
+                rb.AddForce(new Vector2(0, -knockForce));
+            }
+            if (contact.y < transform.position.y - 0.75)
+            {
+                rb.AddForce(new Vector2(0, knockForce / 3));
+            }
         }
-        if (contact.x< transform.position.x - 0.5)
-        {
-            rb.AddForce(new Vector2(knockForce, knockForce * 0.3f));
-        }
-        if (contact.y > transform.position.y +0.23)
-        {
-            rb.AddForce(new Vector2(0, -knockForce));
-        }
-        if (contact.y < transform.position.y -0.75)
-        {
-            rb.AddForce(new Vector2(0, knockForce/3));
-        }
-
     }
 
     /*public IEnumerator Knockback (float otherPosX, float knockbackForce)
