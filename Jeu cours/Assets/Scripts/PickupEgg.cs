@@ -1,20 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PickupFraise : MonoBehaviour
+public class PickupEgg : MonoBehaviour
 {
     private bool cantDo;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Poule") && !cantDo)
         {
             cantDo = true;
             Destroy(gameObject);
-            GameManager.Instance.AddFraise(1);
-            
+            GameManager.Instance.AddEggs(1);
         }
     }
-
-
 }

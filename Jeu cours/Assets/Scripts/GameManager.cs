@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject playerSpawn;
     public AudioSource musique;
-    public int fraises;
+    public int eggs;
     public int goldenPlumes;
     public int plumes = 0;
     private bool musicPlayed;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("p"))
         { ActivateMenu(); }
 
-        if (fraises > 0 && musicPlayed == false && musicOn)
+        if (eggs > 0 && musicPlayed == false && musicOn)
         {
             musicPlayed = true;
             if (musicPlayed)
@@ -82,9 +82,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddFraise(int nb)
+    public void AddEggs(int nb)
     {
-        fraises += nb;
+        eggs += nb;
     }
 
     public void AddPlume(int nb)
