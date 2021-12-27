@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{DF043652-41AA-BB24-132D-DAE7C0975429}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TakeStrawberry.cs">
+    <Files>
+      <File FileName="Assets/Scripts/SceneVariables.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TakeStrawberry.cs" Line="23" Column="20" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PouleWorld" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="TakeStrawberry.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="91de93a5-ba8c-47a5-9a07-4e089d2f6bb2" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
