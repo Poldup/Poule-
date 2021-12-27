@@ -206,7 +206,7 @@ public class PlayerControler : MonoBehaviour
         if (isJumping)
         {
             //la vitesse verticale de la poule est multiplié par jumpForce, le timer de saut augmente avec le temps
-            rb.velocity = transform.up * jumpForce;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpTimer += Time.deltaTime;
             
             //Si le joueur ne maintient pas espace au delà du temps de saut, la vitesse verticale retombe à maxjumpspeed, la poule va bientôt redescendre

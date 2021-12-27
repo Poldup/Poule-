@@ -1,33 +1,21 @@
 fileFormatVersion: 2
-guid: 91b25275eae7e0d42a0f271880e21b72
+guid: 4c78d5383b34fd541876b46f3a49a75d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6816575301262550212
-    second: Attack (36x34)_0
+      213: 4965478120403269316
+    second: Blink (42x42)_0
   - first:
-      213: -9062293500214325151
-    second: Attack (36x34)_1
+      213: 7853364175085887869
+    second: Blink (42x42)_1
   - first:
-      213: -4725635227330987797
-    second: Attack (36x34)_2
+      213: 3654695632555541323
+    second: Blink (42x42)_2
   - first:
-      213: 3755937215895814661
-    second: Attack (36x34)_3
-  - first:
-      213: -5042048495948387297
-    second: Attack (36x34)_4
-  - first:
-      213: 7682661228604053961
-    second: Attack (36x34)_5
-  - first:
-      213: 7966227895991900527
-    second: Attack (36x34)_6
-  - first:
-      213: 6065602599337010669
-    second: Attack (36x34)_7
+      213: -7771193783775295362
+    second: Blink (42x42)_3
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,7 +35,6 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -57,8 +44,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
-    mipBias: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -70,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -79,13 +66,9 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
-  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -115,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack (36x34)_0
+      name: Blink (42x42)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 36
-        height: 34
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3dd04ec114ce614686aff0b19a7137e
-      internalID: -6816575301262550212
+      spriteID: bdfe87cc1cb1eea40a69a31db1419b78
+      internalID: 4965478120403269316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (36x34)_1
+      name: Blink (42x42)_1
       rect:
         serializedVersion: 2
-        x: 36
+        x: 42
         y: 0
-        width: 36
-        height: 34
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08e1f4022071b0c4aa4a6d3dd993ae12
-      internalID: -9062293500214325151
+      spriteID: 1d6dc77d256a70747b63b07a09746d8a
+      internalID: 7853364175085887869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (36x34)_2
+      name: Blink (42x42)_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 84
         y: 0
-        width: 36
-        height: 34
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e26bb44d48d46874c9d9a33b0cdcecb2
-      internalID: -4725635227330987797
+      spriteID: 7645ad00e03ad894995e3d980b476fae
+      internalID: 3654695632555541323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (36x34)_3
+      name: Blink (42x42)_3
       rect:
         serializedVersion: 2
-        x: 108
+        x: 126
         y: 0
-        width: 36
-        height: 34
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,92 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95fe7f3aac0e0774b8c81a6e1b927e9f
-      internalID: 3755937215895814661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack (36x34)_4
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 36
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1012ecb020103244a691191a0d7afd4
-      internalID: -5042048495948387297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack (36x34)_5
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 36
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eefe674681fa34b4ea7f974a75bd7618
-      internalID: 7682661228604053961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack (36x34)_6
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 0
-        width: 36
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fab24e5ba5f1a44ba89c0fb7a553dd7
-      internalID: 7966227895991900527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack (36x34)_7
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 0
-        width: 36
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6a65c10857072044a5368a94ac4d78a
-      internalID: 6065602599337010669
+      spriteID: 11db1cff4606f72429aa6d21aa895dbb
+      internalID: -7771193783775295362
       vertices: []
       indices: 
       edges: []
