@@ -17,18 +17,13 @@ public class GameManager : MonoBehaviour
     public int plumes = 0;
     private bool musicPlayed;
     public bool musicOn;
-    public GameObject menu;
-    private bool menuOn;
     public int lives;
 
 
     private void Awake()
     {
         Instance = this;
-        menu.SetActive(false);
-        menuOn = false;
         camFoActive = true;
-
     }
 
     private void Start()
@@ -38,10 +33,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown("p"))
-        { ActivateMenu(); }
-
         if (eggs > 0 && musicPlayed == false && musicOn)
         {
             musicPlayed = true;
@@ -60,25 +51,6 @@ public class GameManager : MonoBehaviour
         if (lives < 0)
         {
             GameOver();
-        }
-    }
-
-    public void ActivateMenu()
-    {
-        if (!menuOn)
-        {
-            menu.SetActive(true);
-            menuOn = true;
-            Time.timeScale = 0;
-
-        }
-
-        else if (menuOn)
-        {
-            menu.SetActive(false);
-            menuOn = false;
-            Time.timeScale = 1;
-
         }
     }
 
