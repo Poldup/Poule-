@@ -47,7 +47,7 @@ public class PlayerControler : MonoBehaviour
     private bool glideKeyGot;
     private bool isJumping;
     private bool isGliding;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool onWallRight;
     private bool onWallLeft;
     private bool onWallRightRel;
@@ -97,7 +97,7 @@ public class PlayerControler : MonoBehaviour
 
     void AnimTriggers()
     {
-        //envoie les triggers à l'animator
+        //envoie les triggers ? l'animator
         float absVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("Speed", absVelocity);
         animator.SetBool("Grounded", isGrounded);
@@ -106,7 +106,7 @@ public class PlayerControler : MonoBehaviour
 
     void SurroundingDetector()
     {
-        //Détecte le sol et les murs graces aux gameobjects (les points verts autour de la poule)
+        //D?tecte le sol et les murs graces aux gameobjects (les points verts autour de la poule)
         isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckRight.position, platformLayerMask);
         onWallLeftRel = Physics2D.OverlapArea(wallCheckDownLeft.position, wallCheckUpLeft.position, platformLayerMask);
         onWallRightRel = Physics2D.OverlapArea(wallCheckDownRight.position, wallCheckUpRight.position, platformLayerMask);
@@ -115,7 +115,7 @@ public class PlayerControler : MonoBehaviour
     void Flip(float _velocity)
     {
         bool sensGauche=true;
-        //si la poule se déplace vers la droite ou la gauche, son gameobject se tourne dans cette direction, les détecteurs de murs relatifs sont permutés si besoin car ils s'inversent lors du flip
+        //si la poule se d?place vers la droite ou la gauche, son gameobject se tourne dans cette direction, les d?tecteurs de murs relatifs sont permut?s si besoin car ils s'inversent lors du flip
         if(_velocity > 0.1 && notKnocked)
         {
             poule.transform.localScale = new Vector3(-1, 1, 1);
@@ -136,10 +136,10 @@ public class PlayerControler : MonoBehaviour
 
     void MovePlayer()
     {
-        // horizontalmouvement correspond à l'input de l'axe horizontal (correspond à z/d ou </>) x movespeed x le temps qui passe
+        // horizontalmouvement correspond ? l'input de l'axe horizontal (correspond ? z/d ou </>) x movespeed x le temps qui passe
         float _horizontalMovement = axeHorizontal * moveSpeed * Time.fixedDeltaTime;
         
-        //S'il y a un mur à gauche, le mouvement vertical est limité vers la droite, et réciproquement
+        //S'il y a un mur ? gauche, le mouvement vertical est limit? vers la droite, et r?ciproquement
         if (onWallLeft)
         {
             _horizontalMovement = Mathf.Clamp(_horizontalMovement, 0, 1000);
@@ -149,7 +149,7 @@ public class PlayerControler : MonoBehaviour
             _horizontalMovement = Mathf.Clamp(_horizontalMovement, -1000, 0);
         }
         
-        //application du mouvement horizontal au rigibody avec un smoothdamp, une accélération légèrement progressive
+        //application du mouvement horizontal au rigibody avec un smoothdamp, une acc?l?ration l?g?rement progressive
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         if (knockTimer==0)
         {
@@ -166,16 +166,16 @@ public class PlayerControler : MonoBehaviour
 
     void IsJumping()
     {
-        //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas à 0 et que le timer pour sauter à nouveau est à zéro, la poule va sauter
+        //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas ? 0 et que le timer pour sauter ? nouveau est ? z?ro, la poule va sauter
         if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTimer==0)
         {
-            //le timer pour sauter à nouveau passer à 0.2, le compteur de plumes dispo diminue de 1
+            //le timer pour sauter ? nouveau passer ? 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
             notKnocked = true;
             if (!isGrounded)
             { GameManager.Instance.AddPlume(-1); }
 
-            //la poule passe en état de saut, le timer de saut commence à zéro, trigger de saut pour l'animator
+            //la poule passe en ?tat de saut, le timer de saut commence ? z?ro, trigger de saut pour l'animator
             isJumping = true;
             jumpTimer = 0;
             animator.SetTrigger("Jump");
@@ -193,7 +193,7 @@ public class PlayerControler : MonoBehaviour
     void Jump()
     {
         
-        //Quand la poule est au sol, le compteur de plumes disponibles revient  à zéro et le compteur pour sauter à nouveau aussi
+        //Quand la poule est au sol, le compteur de plumes disponibles revient  ? z?ro et le compteur pour sauter ? nouveau aussi
         if (isGrounded)
         {
             GameManager.Instance.ResetPlumes();
@@ -202,20 +202,20 @@ public class PlayerControler : MonoBehaviour
 
         }
         
-        //état de saut
+        //?tat de saut
         if (isJumping)
         {
-            //la vitesse verticale de la poule est multiplié par jumpForce, le timer de saut augmente avec le temps
+            //la vitesse verticale de la poule est multipli? par jumpForce, le timer de saut augmente avec le temps
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpTimer += Time.deltaTime;
             
-            //Si le joueur ne maintient pas espace au delà du temps de saut, la vitesse verticale retombe à maxjumpspeed, la poule va bientôt redescendre
+            //Si le joueur ne maintient pas espace au del? du temps de saut, la vitesse verticale retombe ? maxjumpspeed, la poule va bient?t redescendre
             if (jumpTimer >= jumpDuration && !jumpKeyGot)
             {
                 isJumping = false; 
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y * 1.1f, 0, maxJumpSpeed));
             }
-            //à la fin du temps de saut long (même si le joueur maintient espace), la vitesse verticale retombe à maxjumpspeed, la poule va bientôt redescendre
+            //? la fin du temps de saut long (m?me si le joueur maintient espace), la vitesse verticale retombe ? maxjumpspeed, la poule va bient?t redescendre
             else if (jumpTimer >= longJumpDuration)
             {
                 isJumping = false;
@@ -223,7 +223,7 @@ public class PlayerControler : MonoBehaviour
             }
         }
         
-        //Si le timer pour sauter à nouveau est supérieur à 0, il diminue avec le temps jusqu'à zéro
+        //Si le timer pour sauter ? nouveau est sup?rieur ? 0, il diminue avec le temps jusqu'? z?ro
         if(canJumpAgain>0)
         {
             canJumpAgain = Mathf.Clamp(canJumpAgain - Time.deltaTime, 0, 0.2f);
