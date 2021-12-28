@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private bool musicPlayed;
     public bool musicOn;
     public int lives;
+    public int heart;
+    private bool loosingLife;
 
 
     private void Awake()
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         lives = 3;
+        heart = 3;
     }
 
     void Update()
@@ -47,11 +50,11 @@ public class GameManager : MonoBehaviour
             musique.Stop();
             musicPlayed = false;
         }
-
-        if (lives < 0)
+        if (lives < 0 && !loosingLife)
         {
-            GameOver();
+            StartCoroutine(LifeLost());
         }
+        
     }
 
     public void AddEggs(int nb)
@@ -99,16 +102,35 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator LifeLost()
     {
-        
+        loosingLife = true;
+        Debug.Log("Life Lost");
         camFoActive = false;
+        CircleCollider2D[] circleCollider2D;
+        circleCollider2D = player.GetComponents<CircleCollider2D>();
+        PlayerControler.Instance.canMove = false;
         
+        circleCollider2D[0].enabled = false;
+        circleCollider2D[1].enabled = false;
+        player.GetComponent<PolygonCollider2D>().enabled = false;
         yield return new WaitForSeconds(2);
-        lives = 3;
-        player.transform.position = playerSpawn.transform.position + new Vector3 (0,2,0);
-        offset = cam.GetComponent<CameraFollow>().offset;
-        cam.transform.position = playerSpawn.transform.position + offset;
-        camFoActive = true;
-
+        if (heart < 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            lives = 3;
+            heart -= 1;
+            circleCollider2D[0].enabled = true;
+            circleCollider2D[1].enabled = true;
+            player.GetComponent<PolygonCollider2D>().enabled = true;
+            player.transform.position = playerSpawn.transform.position + new Vector3(0, 2, 0);
+            offset = cam.GetComponent<CameraFollow>().offset;
+            cam.transform.position = playerSpawn.transform.position + offset;
+            PlayerControler.Instance.canMove = true;
+            camFoActive = true;
+            loosingLife = false;
+        }
     }
 
 }

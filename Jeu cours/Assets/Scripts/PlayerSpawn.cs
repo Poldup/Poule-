@@ -10,10 +10,11 @@ public class PlayerSpawn : MonoBehaviour
     
 
 
-    private void Awake()
+    void Start()
     {
         offset = cam.GetComponent<CameraFollow>().offset;
         player.transform.position = transform.position;
+        Debug.Log("playerspawn");
         
         cam.transform.position = transform.position + offset;
     }
