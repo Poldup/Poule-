@@ -8,15 +8,18 @@ public class ParallaxEffect : MonoBehaviour
     public float parallaxEffectY;
     public GameObject cam;
 
+
     [Header("Offset Position")]
     public float offsetX;
     public float offsetY;
 
     private float length;
+    private float startPos;
 
     void Start()
     {
-        transform.position = new Vector2(offsetX, offsetY)  ;
+        transform.position = new Vector2(offsetX, cam.transform.position.y + offsetY);
+        startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
@@ -29,7 +32,7 @@ public class ParallaxEffect : MonoBehaviour
 
         transform.position = new Vector2(offsetX + distX, cam.transform.position.y + offsetY - distY);
 
-        if (temp > offsetX + length) { offsetX += length; }
-        else if (temp < offsetY - length) {offsetY -= length; }
+        if (temp > offsetX + length) { offsetX += length; Debug.Log("paralax transition"); }
+        else if (temp < offsetX - length) {offsetX -= length; }
     }
 }

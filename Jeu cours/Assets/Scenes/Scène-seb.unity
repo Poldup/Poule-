@@ -100708,11 +100708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 291.3
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.5
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 1941485099786222453, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -100757,6 +100757,10 @@ PrefabInstance:
     - target: {fileID: 1941485099786222455, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
       propertyPath: m_Name
       value: Poule
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941485099786222455, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dee910a6bc4a8f4fb5cb1b8f2d31fa2, type: 3}
@@ -100806,7 +100810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.15
+  parallaxEffectX: 0.5
   parallaxEffectY: 0.4
   cam: {fileID: 569994875}
   offsetX: 0
@@ -103272,7 +103276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.05
+  parallaxEffectX: 0.85
   parallaxEffectY: 0
   cam: {fileID: 569994875}
   offsetX: 0
@@ -111325,7 +111329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.2
+  parallaxEffectX: 0.3
   parallaxEffectY: 0.69
   cam: {fileID: 569994875}
   offsetX: 0
@@ -112306,7 +112310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.1
+  parallaxEffectX: 0.7
   parallaxEffectY: 0.2
   cam: {fileID: 569994875}
   offsetX: 0
@@ -112673,7 +112677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456484791742852913, guid: 73c1879bf98ccae4aa6e4f84f0b089e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 171
       objectReference: {fileID: 0}
     - target: {fileID: 1456484791742852913, guid: 73c1879bf98ccae4aa6e4f84f0b089e2, type: 3}
       propertyPath: m_LocalPosition.y
