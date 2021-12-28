@@ -22,6 +22,7 @@ public class PlayerControler : MonoBehaviour
     public float fallMultiplier;
     public float maxFallSpeed;
     
+
     public int comptPlumes;
     public KeyCode toucheSaut;
     public KeyCode toucheGlide;
@@ -42,6 +43,7 @@ public class PlayerControler : MonoBehaviour
     private float knockTimer;
     public float invincibleTimer; 
 
+    public bool canMove;
     private bool jumpKeyGot;
     private bool jumpKeyGotDown;
     private bool glideKeyGot;
@@ -60,6 +62,7 @@ public class PlayerControler : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        canMove = true;
     }
 
     void Update()
@@ -151,7 +154,7 @@ public class PlayerControler : MonoBehaviour
         
         //application du mouvement horizontal au rigibody avec un smoothdamp, une acc?l?ration l?g?rement progressive
         Vector2 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        if (knockTimer==0)
+        if (knockTimer==0 && canMove)
         {
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, 0.05f);
             notKnocked = true;
@@ -167,7 +170,7 @@ public class PlayerControler : MonoBehaviour
     void IsJumping()
     {
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas ? 0 et que le timer pour sauter ? nouveau est ? z?ro, la poule va sauter
-        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTimer==0)
+        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTimer==0 && canMove)
         {
             //le timer pour sauter ? nouveau passer ? 0.2, le compteur de plumes dispo diminue de 1
             canJumpAgain = 0.2f;
