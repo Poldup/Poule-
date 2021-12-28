@@ -1,20 +1,21 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TriggerSecretRoom : MonoBehaviour
+public class TriggerDisableRenderer : MonoBehaviour
 {
-    private TilemapRenderer tilemapRenderer;
+    public Renderer rendererToDisabled;
+    public bool activateOnEnter;
 
     void Start()
     {
-        tilemapRenderer = GetComponent<TilemapRenderer>();
+        rendererToDisabled.enabled = !activateOnEnter;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Poule"))
         {
-            tilemapRenderer.enabled = false;
+            rendererToDisabled.enabled = activateOnEnter;
         }
     }
 
@@ -22,7 +23,7 @@ public class TriggerSecretRoom : MonoBehaviour
     {
         if (collider.CompareTag("Poule"))
         {
-            tilemapRenderer.enabled = true;
+            rendererToDisabled.enabled = !activateOnEnter;
         }
     }
 }
