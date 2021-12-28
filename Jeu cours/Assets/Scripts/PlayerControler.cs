@@ -56,6 +56,7 @@ public class PlayerControler : MonoBehaviour
     private bool onWallLeftRel;
     private bool notKnocked;
     private Vector2 velocity = Vector2.zero;
+    public bool infiniteJump;
 
     public static PlayerControler Instance;
 
@@ -160,31 +161,27 @@ public class PlayerControler : MonoBehaviour
             notKnocked = true;
         }
     }
-        
-
-    /*public void AddPlume()
-    {
-        comptPlumes += 1;
-    }*/
 
     void IsJumping()
     {
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas ? 0 et que le timer pour sauter ? nouveau est ? z?ro, la poule va sauter
-        if (jumpKeyGotDown && ((comptPlumes > 0 && canJumpAgain == 0) | isGrounded)  && currentGlideTimer > 0 && knockTimer==0 && canMove)
+        if (jumpKeyGotDown)
         {
-            //le timer pour sauter ? nouveau passer ? 0.2, le compteur de plumes dispo diminue de 1
-            canJumpAgain = 0.2f;
-            notKnocked = true;
-            if (!isGrounded)
-            { GameManager.Instance.AddPlume(-1); }
+            if ( infiniteJump || (((comptPlumes > 0 && canJumpAgain == 0) | isGrounded) && currentGlideTimer > 0 && knockTimer == 0 && canMove) )
+            {
+                //le timer pour sauter ? nouveau passer ? 0.2, le compteur de plumes dispo diminue de 1
+                canJumpAgain = 0.2f;
+                notKnocked = true;
+                if (!isGrounded && !infiniteJump)
+                { GameManager.Instance.AddPlume(-1); }
 
-            //la poule passe en ?tat de saut, le timer de saut commence ? z?ro, trigger de saut pour l'animator
-            isJumping = true;
-            jumpTimer = 0;
-            animator.SetTrigger("Jump");
+                //la poule passe en ?tat de saut, le timer de saut commence ? z?ro, trigger de saut pour l'animator
+                isJumping = true;
+                jumpTimer = 0;
+                animator.SetTrigger("Jump");
 
-            //rb.velocity = Vector2.zero; (NE SERT A RIEN ?)
-
+                //rb.velocity = Vector2.zero; (NE SERT A RIEN ?)
+            }
         }
     }
 
