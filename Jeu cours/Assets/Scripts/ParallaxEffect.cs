@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class ParallaxEffect : MonoBehaviour
 {
-    private float length;
-    private Vector3 startPos;
-
     public float parallaxEffectX;
     public float parallaxEffectY;
     public GameObject cam;
 
+    [Header("Offset Position")]
+    public float offsetX;
+    public float offsetY;
+
+    private float length;
+
     void Start()
     {
-        startPos = transform.position;
+        transform.position = new Vector2(offsetX, offsetY)  ;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
@@ -24,9 +27,9 @@ public class ParallaxEffect : MonoBehaviour
         float distX = (cam.transform.position.x * parallaxEffectX);
         float distY = (cam.transform.position.y * parallaxEffectY);
 
-        transform.position = new Vector2(startPos.x + distX, startPos.y + distY);
+        transform.position = new Vector2(offsetX + distX, cam.transform.position.y + offsetY - distY);
 
-        if (temp > startPos.x + length) { startPos.x += length; }
-        else if (temp < startPos.x - length) {startPos.x -= length; }
+        if (temp > offsetX + length) { offsetX += length; }
+        else if (temp < offsetY - length) {offsetY -= length; }
     }
 }
