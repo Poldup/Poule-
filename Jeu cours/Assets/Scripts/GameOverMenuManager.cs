@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class GameOverMenuManager : MonoBehaviour
 {
     public string gameSceneName;
+    public string mainMenuSceneName;
 
     public void StartGame()
     {
         SceneManager.LoadScene(gameSceneName);
     }
 
-    public void QuitToDesktop()
+    public void QuitToMainMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }

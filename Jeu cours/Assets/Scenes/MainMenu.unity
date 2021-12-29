@@ -247,6 +247,8 @@ MonoBehaviour:
   parallaxEffectX: 0.2
   parallaxEffectY: 0.08
   cam: {fileID: 1806926785}
+  offsetX: 0
+  offsetY: 0
 --- !u!212 &131900522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -462,7 +464,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 584908270}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -680,7 +682,7 @@ RectTransform:
   m_Children:
   - {fileID: 1537460596}
   m_Father: {fileID: 584908270}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -813,7 +815,7 @@ RectTransform:
   m_Children:
   - {fileID: 148846778}
   m_Father: {fileID: 584908270}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1029,6 +1031,8 @@ MonoBehaviour:
   parallaxEffectX: 0.15
   parallaxEffectY: 0.06
   cam: {fileID: 1806926785}
+  offsetX: 0
+  offsetY: 0
 --- !u!212 &307371904
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1288,6 +1292,8 @@ MonoBehaviour:
   parallaxEffectX: 0.1
   parallaxEffectY: 0.04
   cam: {fileID: 1806926785}
+  offsetX: 0
+  offsetY: 0
 --- !u!212 &368462043
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1612,12 +1618,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 660907015}
-  - {fileID: 949594903}
   - {fileID: 227268672}
   - {fileID: 274366891}
   - {fileID: 1342266531}
   - {fileID: 185659683}
+  - {fileID: 660907015}
+  - {fileID: 949594903}
   m_Father: {fileID: 1495188251}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1664,7 +1670,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 584908270}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -3748,7 +3754,7 @@ RectTransform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 584908270}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -4315,7 +4321,7 @@ RectTransform:
   m_Children:
   - {fileID: 894149764}
   m_Father: {fileID: 584908270}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -4453,7 +4459,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 600}
+  m_SizeDelta: {x: 820, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1495188252
 MonoBehaviour:
@@ -17726,6 +17732,8 @@ MonoBehaviour:
   parallaxEffectX: 0.05
   parallaxEffectY: 0.02
   cam: {fileID: 1806926785}
+  offsetX: 0
+  offsetY: 0
 --- !u!212 &2143096537
 SpriteRenderer:
   m_ObjectHideFlags: 0

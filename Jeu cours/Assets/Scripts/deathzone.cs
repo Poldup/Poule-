@@ -14,10 +14,11 @@ public class deathzone : MonoBehaviour
         {
             Vector2 contact = other.GetContact(0).point;
 
-            if(!other.transform.GetComponent<PlayerControler>().isInvincible())
+            if(!other.transform.GetComponent<PlayerControler>().isInvincible)
             {
-                PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, contact);
-                GameManager.Instance.TakeDamage();
+                StartCoroutine(PlayerControler.Instance.Knockback(contact));
+                //PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, contact);
+                //GameManager.Instance.TakeDamage();
             }
 
             if(destroyOnCollision)
@@ -31,10 +32,11 @@ public class deathzone : MonoBehaviour
     {
         if (collider.transform.GetComponent<PlayerControler>() != null)
         {
-            if (!collider.transform.GetComponent<PlayerControler>().isInvincible())
+            if (!collider.transform.GetComponent<PlayerControler>().isInvincible)
             {
-                PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, transform.position);
-                GameManager.Instance.TakeDamage();
+                StartCoroutine(PlayerControler.Instance.Knockback(transform.position));
+                //PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, transform.position);
+                //GameManager.Instance.TakeDamage();
             }
 
             if (destroyOnCollision)

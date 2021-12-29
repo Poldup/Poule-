@@ -143,6 +143,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject oeuf in pickedEggs)
         {
             oeuf.SetActive(true);
+            oeuf.GetComponent<PickupEgg>().canDo = true;
         }
         pickedEggs.Clear();
         goldenPlumes -= pickedGFeathers.Count;
