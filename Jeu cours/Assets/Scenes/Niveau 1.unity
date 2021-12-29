@@ -2579,7 +2579,7 @@ Tilemap:
       - {fileID: -6071002419338243549, guid: c016f0eb0a188a14ab7f86d910097523, type: 3}
       - {fileID: -7001973787898513139, guid: c016f0eb0a188a14ab7f86d910097523, type: 3}
       - {fileID: -7336932856281768672, guid: c016f0eb0a188a14ab7f86d910097523, type: 3}
-      m_AnimationSpeed: 50.000004
+      m_AnimationSpeed: 50
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -100591,11 +100591,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.15
-  parallaxEffectY: 0.68
+  parallaxEffectX: 0.5
+  parallaxEffectY: 0.4
   cam: {fileID: 569994875}
   offsetX: 0
-  offsetY: 20
+  offsetY: 8.3
 --- !u!212 &793647479
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102797,11 +102797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.05
-  parallaxEffectY: 0.64
+  parallaxEffectX: 0.85
+  parallaxEffectY: 0
   cam: {fileID: 569994875}
   offsetX: 0
-  offsetY: 20
+  offsetY: 7.7
 --- !u!212 &1279293173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110725,11 +110725,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.2
-  parallaxEffectY: 0.7
+  parallaxEffectX: 0.3
+  parallaxEffectY: 0.69
   cam: {fileID: 569994875}
   offsetX: 0
-  offsetY: 20
+  offsetY: 4.7
 --- !u!212 &1990777403
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111238,11 +111238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2555d0e25e2b94592311c6de68d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectX: 0.1
-  parallaxEffectY: 0.66
+  parallaxEffectX: 0.7
+  parallaxEffectY: 0.2
   cam: {fileID: 569994875}
   offsetX: 0
-  offsetY: 20
+  offsetY: 8.45
 --- !u!212 &2101706872
 SpriteRenderer:
   m_ObjectHideFlags: 0
