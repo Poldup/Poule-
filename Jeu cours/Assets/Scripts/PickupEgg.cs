@@ -11,6 +11,7 @@ public class PickupEgg : MonoBehaviour
         {
             if (canDo)
             {
+                canDo = false;
                 GameManager.Instance.Pickoeuf(gameObject);
                 gameObject.SetActive(false);
             }
