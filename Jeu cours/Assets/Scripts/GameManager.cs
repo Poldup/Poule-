@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
 
     public void AddPlume(int nb)
     {
-        plumes += nb;
-        PlayerControler.Instance.comptPlumes += nb;
+        plumes = Mathf.Clamp(plumes + nb, 0, 100);
+        PlayerControler.Instance.comptPlumes = Mathf.Clamp(PlayerControler.Instance.comptPlumes + nb, 0, 100);
     }
 
 

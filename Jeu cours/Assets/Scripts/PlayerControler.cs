@@ -205,7 +205,7 @@ public class PlayerControler : MonoBehaviour
         if (isGrounded)
         {
             GameManager.Instance.ResetPlumes();
-            comptPlumes = GameManager.Instance.goldenPlumes + GameManager.Instance.plumes;
+            comptPlumes = Mathf.Clamp(GameManager.Instance.goldenPlumes + GameManager.Instance.plumes, 0, 100);
             canJumpAgain = 0;
 
         }
