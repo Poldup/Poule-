@@ -8,7 +8,7 @@ public class weakspot : MonoBehaviour
     {
         if (collision.CompareTag("Poule"))
         {
-            if(!collision.GetComponent<PlayerControler>().isInvincible())
+            if(!collision.GetComponent<PlayerControler>().isInvincible)
             {
                 collision.GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpForce);
             }

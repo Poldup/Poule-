@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickupObject : MonoBehaviour
 {
+    private bool canDo=true;
+
     
 
 
@@ -13,9 +15,13 @@ public class PickupObject : MonoBehaviour
       
         if (collision.CompareTag("Poule"))
         {
-             StopCoroutine(Disappear());
-            StartCoroutine(Disappear());
-            GameManager.Instance.AddPlume(1);
+            if (canDo)
+            {
+                canDo = false;
+                StopCoroutine(Disappear());
+                StartCoroutine(Disappear());
+                GameManager.Instance.AddPlume(1);
+            }
         }
         
     }
@@ -29,6 +35,7 @@ public class PickupObject : MonoBehaviour
             
             yield return new WaitForSeconds(.1f);
         }
+        canDo = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield break;
