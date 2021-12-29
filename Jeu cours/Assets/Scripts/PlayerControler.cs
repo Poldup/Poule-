@@ -281,7 +281,7 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public IEnumerator Knockback(Vector2 contact)
+    public IEnumerator Knockback(Vector2 contact,bool knocking)
     {
         if (isInvincible)
         { yield break; }
@@ -293,46 +293,49 @@ public class PlayerControler : MonoBehaviour
             GameManager.Instance.TakeDamage();
             StartCoroutine(blink);
             isInvincible = true;
-            Vector2 knockDir;
+            if (knocking)
+            {
+                Vector2 knockDir;
 
-            if (contact.y > transform.position.y + 0.4375 || (contact.x > transform.position.x + 0.4975 && contact.x < transform.position.x + 0.605 && contact.y > transform.position.y + 0.249))
-            {
-                //haut
-                knockDir = new Vector2(0,-10);
-                //Debug.Log("haut");
+                if (contact.y > transform.position.y + 0.4375 || (contact.x > transform.position.x + 0.4975 && contact.x < transform.position.x + 0.605 && contact.y > transform.position.y + 0.249))
+                {
+                    //haut
+                    knockDir = new Vector2(0, -10);
+                    //Debug.Log("haut");
+                }
+                else if (contact.y > transform.position.y - 0.936 && contact.x > transform.position.x)
+                {
+                    //droite
+                    knockDir = new Vector2(-5, 2);
+                    //Debug.Log("droite");
+                }
+                else if (contact.y > transform.position.y - 0.936 && contact.x < transform.position.x)
+                {
+                    //gauche
+                    knockDir = new Vector2(5, 2);
+                    //Debug.Log("gauche");
+                }
+                else if (contact.y < transform.position.y - 0.936 && rb.velocity.x > 0.1)
+                {
+                    //bas en allant vers droite
+                    knockDir = new Vector2(-3.75f, 5);
+                    //Debug.Log("bas en allant vers la droite");
+                }
+                else if (contact.y < transform.position.y - 0.936 && rb.velocity.x < -0.1)
+                {
+                    //bas en allant vers gauche
+                    knockDir = new Vector2(3.75f, 5);
+                    //Debug.Log("bas en allant vers la gauche");
+                }
+                else
+                {
+                    //bas vertical
+                    knockDir = new Vector2(0, 5);
+                    //Debug.Log("bas vertical");
+                }
+                rb.velocity = new Vector2(0, 0);
+                rb.AddForce(knockDir, ForceMode2D.Impulse);
             }
-            else if (contact.y > transform.position.y - 0.936 && contact.x > transform.position.x)
-            {
-                //droite
-                knockDir = new Vector2(-5, 2);
-                //Debug.Log("droite");
-            }
-            else if (contact.y > transform.position.y - 0.936 && contact.x < transform.position.x)
-            {
-                //gauche
-                knockDir = new Vector2(5, 2);
-                //Debug.Log("gauche");
-            }
-            else if (contact.y < transform.position.y - 0.936 && rb.velocity.x > 0.1)
-            {
-                //bas en allant vers droite
-                knockDir = new Vector2(-3.75f, 5);
-                //Debug.Log("bas en allant vers la droite");
-            }
-            else if (contact.y < transform.position.y - 0.936 && rb.velocity.x < -0.1)
-            {
-                //bas en allant vers gauche
-                knockDir = new Vector2(3.75f,5) ;
-                //Debug.Log("bas en allant vers la gauche");
-            }
-            else
-            {
-                //bas vertical
-                knockDir = new Vector2(0, 5);
-                //Debug.Log("bas vertical");
-            }
-            rb.velocity = new Vector2(0, 0);
-            rb.AddForce(knockDir, ForceMode2D.Impulse);
             yield return new WaitForSeconds(.5f);
             canMove = true;
             yield return new WaitForSeconds(1);

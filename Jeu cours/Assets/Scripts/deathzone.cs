@@ -16,7 +16,7 @@ public class deathzone : MonoBehaviour
 
             if(!other.transform.GetComponent<PlayerControler>().isInvincible)
             {
-                StartCoroutine(PlayerControler.Instance.Knockback(contact));
+                StartCoroutine(PlayerControler.Instance.Knockback(contact,true));
                 //PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, contact);
                 //GameManager.Instance.TakeDamage();
             }
@@ -34,9 +34,10 @@ public class deathzone : MonoBehaviour
         {
             if (!collider.transform.GetComponent<PlayerControler>().isInvincible)
             {
-                StartCoroutine(PlayerControler.Instance.Knockback(transform.position));
+                StartCoroutine(PlayerControler.Instance.Knockback(transform.position, false));
                 //PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, transform.position);
-                //GameManager.Instance.TakeDamage();
+                GameManager.Instance.TakeDamage();
+                
             }
 
             if (destroyOnCollision)
