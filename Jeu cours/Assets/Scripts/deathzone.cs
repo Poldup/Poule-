@@ -32,11 +32,12 @@ public class deathzone : MonoBehaviour
     {
         if (collider.transform.GetComponent<PlayerControler>() != null)
         {
+            
             if (!collider.transform.GetComponent<PlayerControler>().isInvincible)
             {
                 StartCoroutine(PlayerControler.Instance.Knockback(transform.position, false));
                 //PlayerControler.Instance.Knockback(knockbackTimer, knockbackForce, transform.position);
-                GameManager.Instance.TakeDamage();
+                //GameManager.Instance.TakeDamage();
                 
             }
 
