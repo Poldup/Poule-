@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerSpawn : MonoBehaviour
 {
+    public bool devMode;
     public GameObject player;
     public GameObject cam;
     private Vector3 offset;
@@ -12,8 +13,11 @@ public class PlayerSpawn : MonoBehaviour
 
     void Start()
     {
-        offset = cam.GetComponent<CameraFollow>().offset;
-        player.transform.position = transform.position;
-        cam.transform.position = transform.position + offset;
+        if (!devMode)
+        {
+            offset = cam.GetComponent<CameraFollow>().offset;
+            player.transform.position = transform.position;
+            cam.transform.position = transform.position + offset;
+        }
     }
 }

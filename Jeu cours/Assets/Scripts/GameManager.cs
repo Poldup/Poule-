@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public bool musicOn;
     public int lives;
     public int heart;
-    private bool loosingLife;
+    public bool loosingLife;
 
     public List<GameObject> pickedEggs = new List<GameObject>();
     public List<GameObject> pickedGFeathers = new List<GameObject>();
@@ -93,16 +93,17 @@ public class GameManager : MonoBehaviour
     public IEnumerator LifeLost()
     {
         loosingLife = true;
+        Debug.Log("Loosing Life");
         camFoActive = false;
+        player.transform.GetChild(0).gameObject.GetComponent<Animator>().enabled = false;
         CircleCollider2D[] circleCollider2D;
         circleCollider2D = player.GetComponents<CircleCollider2D>();
         PlayerControler.Instance.canMove = false;
-        
         circleCollider2D[0].enabled = false;
         circleCollider2D[1].enabled = false;
         player.GetComponent<PolygonCollider2D>().enabled = false;
         yield return new WaitForSeconds(2);
-        if (heart < 0)
+        if (heart == 0)
         {
             GameOver();
         }
@@ -112,6 +113,7 @@ public class GameManager : MonoBehaviour
             heart -= 1;
             circleCollider2D[0].enabled = true;
             circleCollider2D[1].enabled = true;
+            player.transform.GetChild(0).gameObject.GetComponent<Animator>().enabled = true;
             player.GetComponent<PolygonCollider2D>().enabled = true;
             ReturnToCheckpoint();
             PlayerControler.Instance.canMove = true;

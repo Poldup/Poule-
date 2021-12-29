@@ -7,7 +7,7 @@ public class TrueDeathzone : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other )
     {
-        if (other.CompareTag("Poule"))
+        if (other.CompareTag("Poule")&& !GameManager.Instance.loosingLife)
         {
             StartCoroutine(GameManager.Instance.LifeLost());
         }
