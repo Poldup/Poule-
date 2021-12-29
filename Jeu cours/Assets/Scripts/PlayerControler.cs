@@ -301,7 +301,6 @@ public class PlayerControler : MonoBehaviour
             GameManager.Instance.TakeDamage();
             StartCoroutine(blink);
             isInvincible = true;
-            Debug.Log(knocking);
             if (knocking)
             {
                 Vector2 knockDir;
@@ -346,10 +345,8 @@ public class PlayerControler : MonoBehaviour
                 rb.AddForce(knockDir, ForceMode2D.Impulse);
                 yield return new WaitForSeconds(.5f);
             }
-            Debug.Log("weshh");
             
             canMove = true;
-            Debug.Log("wesh");
             yield return new WaitForSeconds(1);
             isInvincible = false;
             

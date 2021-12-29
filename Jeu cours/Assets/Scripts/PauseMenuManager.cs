@@ -65,8 +65,8 @@ public class PauseMenuManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        string name = SceneManager.GetActiveScene().ToString();
-        SceneManager.LoadScene(name);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
     public void NextLevel()

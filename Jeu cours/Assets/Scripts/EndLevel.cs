@@ -13,7 +13,6 @@ public class EndLevel : MonoBehaviour
     {
         endMenu.SetActive(false);
         eggTotal = egglist.transform.childCount;
-        Debug.Log(eggTotal);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,15 +47,18 @@ public class EndLevel : MonoBehaviour
             yield return new WaitForSeconds(.1f);
         }
         yield return new WaitForSeconds(.4f);
-        body.GetChild(4).gameObject.SetActive(false);
+        body.GetChild(4).gameObject.SetActive(true);
+
         body.GetChild(5).GetComponent<TMPro.TextMeshProUGUI>().text = eggTotal.ToString();
+        body.GetChild(5).gameObject.SetActive(true);
+        yield return new WaitForSeconds(.5f);
         if (eggs==eggTotal)
         {
             body.GetChild(6).gameObject.SetActive(true);
         }
         else
         {
-            body.GetChild(7).gameObject.SetActive(false);
+            body.GetChild(7).gameObject.SetActive(true);
         }
 
 
