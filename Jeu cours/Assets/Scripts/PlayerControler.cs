@@ -184,7 +184,7 @@ public class PlayerControler : MonoBehaviour
                 //le timer pour sauter ? nouveau passer ? 0.2, le compteur de plumes dispo diminue de 1
                 canJumpAgain = 0.2f;
                 notKnocked = true;
-                if (!isGrounded && !infiniteJump)
+                if (!isGrounded)
                 { GameManager.Instance.AddPlume(-1); }
 
                 //la poule passe en ?tat de saut, le timer de saut commence ? z?ro, trigger de saut pour l'animator
