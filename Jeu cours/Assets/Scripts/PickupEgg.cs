@@ -2,15 +2,14 @@
 
 public class PickupEgg : MonoBehaviour
 {
-    private bool cantDo;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Poule") && !cantDo)
+        if (collision.CompareTag("Poule"))
         {
-            cantDo = true;
-            Destroy(gameObject);
-            GameManager.Instance.AddEggs(1);
+            GameManager.Instance.Pickoeuf(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

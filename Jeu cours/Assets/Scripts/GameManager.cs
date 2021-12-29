@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public int heart;
     private bool loosingLife;
 
+    public List<GameObject> pickedEggs = new List<GameObject>();
+    public List<GameObject> pickedGFeathers = new List<GameObject>();
 
     private void Awake()
     {
@@ -57,20 +59,12 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void AddEggs(int nb)
-    {
-        eggs += nb;
-    }
-
     public void AddPlume(int nb)
     {
         plumes += nb;
         PlayerControler.Instance.comptPlumes += nb;
     }
-    public void AddGPlume(int nb)
-    {
-        goldenPlumes += nb;
-    }
+
 
     public void ResetPlumes()
     {
@@ -124,13 +118,42 @@ public class GameManager : MonoBehaviour
             circleCollider2D[0].enabled = true;
             circleCollider2D[1].enabled = true;
             player.GetComponent<PolygonCollider2D>().enabled = true;
-            player.transform.position = playerSpawn.transform.position + new Vector3(0, 2, 0);
-            offset = cam.GetComponent<CameraFollow>().offset;
-            cam.transform.position = playerSpawn.transform.position + offset;
+            ReturnToCheckpoint();
             PlayerControler.Instance.canMove = true;
             camFoActive = true;
             loosingLife = false;
         }
+    }
+
+    public void Pickoeuf(GameObject oeuf)
+    {
+        pickedEggs.Add(oeuf);
+        eggs += 1;
+    }
+
+    public void PickGPlume(GameObject plume)
+    {
+        pickedGFeathers.Add(plume);
+        goldenPlumes += 1;
+    }
+
+    public void ReturnToCheckpoint()
+    {
+        player.transform.position = playerSpawn.transform.position + new Vector3(0, 2, 0);
+        offset = cam.GetComponent<CameraFollow>().offset;
+        cam.transform.position = playerSpawn.transform.position + offset;
+        eggs -= pickedEggs.Count;
+        foreach (GameObject oeuf in pickedEggs)
+        {
+            oeuf.SetActive(true);
+        }
+        pickedEggs.Clear();
+        goldenPlumes -= pickedGFeathers.Count;
+        foreach (GameObject plume in pickedGFeathers)
+        {
+            plume.SetActive(true);
+        }
+        pickedGFeathers.Clear();
     }
 
 }
