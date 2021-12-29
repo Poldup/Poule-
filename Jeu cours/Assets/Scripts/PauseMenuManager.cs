@@ -6,6 +6,7 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject settingsMenu;
     public string mainMenuSceneName;
+    public string nextSceneName;
 
     private bool paused = false;
 
@@ -22,6 +23,7 @@ public class PauseMenuManager : MonoBehaviour
             else PauseGame();
         }
     }
+    
 
     public void PauseGame()
     {
@@ -61,4 +63,13 @@ public class PauseMenuManager : MonoBehaviour
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
 }

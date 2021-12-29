@@ -40,7 +40,8 @@ public class PlayerControler : MonoBehaviour
     public Material defmat;
     public Material whiteMat;
 
-    private float axeHorizontal;
+    [HideInInspector]
+    public float axeHorizontal;
     private float jumpTimer;
     private float currentGlideTimer;
     private float canJumpAgain = 0.2f;
@@ -51,6 +52,7 @@ public class PlayerControler : MonoBehaviour
     public bool isInvincible;
     
     public bool canMove;
+    public bool playing;
     private bool jumpKeyGot;
     private bool jumpKeyGotDown;
     private bool glideKeyGot;
@@ -69,6 +71,7 @@ public class PlayerControler : MonoBehaviour
 
     private void Awake()
     {
+        playing = true;
         Instance = this;
         canMove = true;
     }
@@ -97,10 +100,13 @@ public class PlayerControler : MonoBehaviour
 
     void GetKeys()
     {
-        jumpKeyGot = Input.GetKey(toucheSaut);
-        jumpKeyGotDown = Input.GetKeyDown(toucheSaut);
-        glideKeyGot = Input.GetKey(toucheGlide) | Input.GetKey(toucheGlide2) ;
-        axeHorizontal = Input.GetAxis("Horizontal");
+        if (playing)
+        {
+            jumpKeyGot = Input.GetKey(toucheSaut);
+            jumpKeyGotDown = Input.GetKeyDown(toucheSaut);
+            glideKeyGot = Input.GetKey(toucheGlide) | Input.GetKey(toucheGlide2);
+            axeHorizontal = Input.GetAxis("Horizontal");
+        }
     }
 
     
