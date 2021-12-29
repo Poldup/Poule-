@@ -39,6 +39,11 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void BackToCheckpoint()
+    {
+        GameManager.Instance.ReturnToCheckpoint();
+    }
+
     public void OpenSettings()
     {
         pauseMenu.SetActive(false);

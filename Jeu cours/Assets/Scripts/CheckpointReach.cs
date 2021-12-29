@@ -5,7 +5,6 @@ using UnityEngine;
 public class CheckpointReach : MonoBehaviour
 {
     public GameObject playerSpawn;
-    public bool triggered;
     
 
     // Update is called once per frame
@@ -13,7 +12,7 @@ public class CheckpointReach : MonoBehaviour
     {
         if (collision.CompareTag("Poule"))
         {
-            triggered = true;
+            transform.parent.gameObject.transform.GetChild(1).gameObject.GetComponent<CheckpointAnimation>().triggered = true;
             playerSpawn.transform.position = transform.position;
             foreach (GameObject egg in GameManager.Instance.pickedEggs)
             {

@@ -32,7 +32,7 @@ public class ParallaxEffect : MonoBehaviour
 
         transform.position = new Vector2(offsetX + distX, cam.transform.position.y + offsetY - distY);
 
-        if (temp > offsetX + length) { offsetX += length; Debug.Log("paralax transition"); }
+        if (temp > offsetX + length) { offsetX += length;}
         else if (temp < offsetX - length) {offsetX -= length; }
     }
 }

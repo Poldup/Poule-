@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointAnimation : MonoBehaviour
 {
-    private bool triggered;
+    public bool triggered;
     private void Awake()
     {
         gameObject.GetComponent<Animator>().enabled = false;
@@ -12,7 +12,6 @@ public class CheckpointAnimation : MonoBehaviour
 
     void Update()
     {
-        triggered = transform.parent.gameObject.transform.GetChild(0).gameObject.GetComponent<CheckpointReach>().triggered;
         if (triggered)
         { gameObject.GetComponent<Animator>().enabled = true; }
     }

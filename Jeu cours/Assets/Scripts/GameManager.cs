@@ -87,17 +87,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
-
-        string sceneName = SceneManager.GetActiveScene().name;
-
         SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
     public IEnumerator LifeLost()
     {
         loosingLife = true;
-        Debug.Log("Life Lost");
         camFoActive = false;
         CircleCollider2D[] circleCollider2D;
         circleCollider2D = player.GetComponents<CircleCollider2D>();
