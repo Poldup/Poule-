@@ -12,6 +12,12 @@ public class PlayerControler : MonoBehaviour
     public SpriteRenderer sprite;
     [SerializeField] private LayerMask platformLayerMask;
 
+
+    public float xHor;
+    public float yHor;
+    public float yBas;
+    public float basMult;
+
     public float moveSpeed;
     public float maxJumpSpeed;
     public float jumpForce;
@@ -21,9 +27,10 @@ public class PlayerControler : MonoBehaviour
     public float glideTimer;
     public float fallMultiplier;
     public float maxFallSpeed;
-    
+    public bool infiniteJump;
 
-    public int comptPlumes;
+
+
     public KeyCode toucheSaut;
     public KeyCode toucheGlide;
     public KeyCode toucheGlide2;
@@ -36,13 +43,19 @@ public class PlayerControler : MonoBehaviour
     public Transform wallCheckUpRight;
     public Transform wallCheckDownRight;
 
-    public float axeHorizontal;
+    public Material defmat;
+    public Material whiteMat;
+
+    private float axeHorizontal;
     private float jumpTimer;
     private float currentGlideTimer;
     private float canJumpAgain = 0.2f;
     private float knockTimer;
-    public float invincibleTimer; 
 
+    [HideInInspector]
+    public int comptPlumes;
+    public bool isInvincible;
+    
     public bool canMove;
     private bool jumpKeyGot;
     private bool jumpKeyGotDown;
@@ -50,13 +63,13 @@ public class PlayerControler : MonoBehaviour
     private bool isJumping;
     private bool isGliding;
     public bool isGrounded;
-    public bool onWallRight;
-    public bool onWallLeft;
-    public bool onWallRightRel;
-    public bool onWallLeftRel;
+    private bool onWallRight;
+    private bool onWallLeft;
+    private bool onWallRightRel;
+    private bool onWallLeftRel;
     private bool notKnocked;
     private Vector2 velocity = Vector2.zero;
-    public bool infiniteJump;
+    
 
     public static PlayerControler Instance;
 
@@ -82,10 +95,9 @@ public class PlayerControler : MonoBehaviour
         MovePlayer();
         Jump();
         Glide();
-        invincibleTimer -= Time.fixedDeltaTime;
 
-        if (knockTimer>0)
-        { knockTimer = Mathf.Clamp(knockTimer-Time.deltaTime,0,100); }
+        //if (knockTimer>0)
+        //{ knockTimer = Mathf.Clamp(knockTimer-Time.deltaTime,0,100); }
         
     }
 
@@ -120,13 +132,13 @@ public class PlayerControler : MonoBehaviour
     {
         bool sensGauche=true;
         //si la poule se d?place vers la droite ou la gauche, son gameobject se tourne dans cette direction, les d?tecteurs de murs relatifs sont permut?s si besoin car ils s'inversent lors du flip
-        if(axeHorizontal>0 && notKnocked)
+        if(axeHorizontal>0 && canMove)
         {
             poule.transform.localScale = new Vector3(-1, 1, 1);
             sensGauche = false;
         }
         
-        else if(axeHorizontal<0 && notKnocked)
+        else if(axeHorizontal<0 && canMove)
         {
             poule.transform.localScale = new Vector3(1, 1, 1);
             sensGauche = true;
@@ -185,10 +197,6 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public bool isInvincible()
-    {
-        return invincibleTimer > 0;
-    }
 
     void Jump()
     {
@@ -233,7 +241,7 @@ public class PlayerControler : MonoBehaviour
 
     void IsGliding()
     {
-        if (rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot && knockTimer==0 && jumpTimer>jumpDuration && !onWallLeft && !onWallRight)
+        if (canMove && rb.velocity.y < 0 && !isGrounded && currentGlideTimer > 0 && !jumpKeyGotDown && glideKeyGot && knockTimer==0 && jumpTimer>jumpDuration && !onWallLeft && !onWallRight)
         {
             isGliding = true;
             notKnocked = true;
@@ -273,66 +281,82 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public void Knockback(float knockTime, float knockForce, Vector2 contact)
+    public IEnumerator Knockback(Vector2 contact)
     {
-        if (!isInvincible())
-        {
-            invincibleTimer = 2.0f;
-            knockTimer = knockTime;
-            notKnocked = false;
-
-            if (contact.x > transform.position.x + 0.5)
-            {
-                rb.AddForce(new Vector2(-knockForce, knockForce * 0.3f));
-            }
-            if (contact.x < transform.position.x - 0.5)
-            {
-                rb.AddForce(new Vector2(knockForce, knockForce * 0.3f));
-            }
-            if (contact.y > transform.position.y + 0.23)
-            {
-                rb.AddForce(new Vector2(0, -knockForce));
-            }
-            if (contact.y < transform.position.y - 0.75)
-            {
-                rb.AddForce(new Vector2(0, knockForce / 3));
-            }
-        }
-    }
-
-    /*public IEnumerator Knockback (float otherPosX, float knockbackForce)
-    {
-        knockTime = 0.5f;
-        int knockDirX;
-        int knockDirY;
-        if (rb.velocity.x>=1)
-        {
-            knockDirX = -1;
-        }
+        if (isInvincible)
+        { yield break; }
         else
         {
-            knockDirX = 1;
-        }
-        if (rb.velocity.y<=0)
-        {
-            knockDirY = 1;
-        }
-        else 
-        { 
-            knockDirY = -1; 
-        }
-        while (knockTime > 0)
-        {
-            knockTime = Mathf.Clamp(knockTime - Time.deltaTime, 0, 10);
-            rb.velocity = (new Vector2(knockDirX * knockbackForce, knockDirY * knockbackForce));
-        }
-        rb.velocity = (new Vector2(rb.velocity.x * 0.1f, rb.velocity.y * 0.1f));
+            IEnumerator blink;
+            blink = Blink();
+            canMove = false;
+            GameManager.Instance.TakeDamage();
+            StartCoroutine(blink);
+            isInvincible = true;
+            Vector2 knockDir;
 
+            if (contact.y > transform.position.y + 0.4375 || (contact.x > transform.position.x + 0.4975 && contact.x < transform.position.x + 0.605 && contact.y > transform.position.y + 0.249))
+            {
+                //haut
+                knockDir = new Vector2(0,-10);
+                //Debug.Log("haut");
+            }
+            else if (contact.y > transform.position.y - 0.936 && contact.x > transform.position.x)
+            {
+                //droite
+                knockDir = new Vector2(-5, 2);
+                //Debug.Log("droite");
+            }
+            else if (contact.y > transform.position.y - 0.936 && contact.x < transform.position.x)
+            {
+                //gauche
+                knockDir = new Vector2(5, 2);
+                //Debug.Log("gauche");
+            }
+            else if (contact.y < transform.position.y - 0.936 && rb.velocity.x > 0.1)
+            {
+                //bas en allant vers droite
+                knockDir = new Vector2(-3.75f, 5);
+                //Debug.Log("bas en allant vers la droite");
+            }
+            else if (contact.y < transform.position.y - 0.936 && rb.velocity.x < -0.1)
+            {
+                //bas en allant vers gauche
+                knockDir = new Vector2(3.75f,5) ;
+                //Debug.Log("bas en allant vers la gauche");
+            }
+            else
+            {
+                //bas vertical
+                knockDir = new Vector2(0, 5);
+                //Debug.Log("bas vertical");
+            }
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(knockDir, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(.5f);
+            canMove = true;
+            yield return new WaitForSeconds(1);
+            isInvincible = false;
+            
+            StopCoroutine(blink);
+            transform.GetChild(0).GetComponent<SpriteRenderer>().material = defmat;
 
-        yield return 0;
-    }*/
+        }
 
+       
     }
+
+    public IEnumerator Blink()
+    {
+        while(true)
+        {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().material = whiteMat;
+            yield return new WaitForSeconds(.1f);
+            transform.GetChild(0).GetComponent<SpriteRenderer>().material = defmat;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+}
 
 
 /* CODE DU COURS

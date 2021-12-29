@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037773232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -1.0873519, z: 3.0036569}
+  m_LocalPosition: {x: -0.5, y: -1.135, z: 3.0036569}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1941485099786222453}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336995457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -1.0873519, z: 3.0036569}
+  m_LocalPosition: {x: 0.5, y: -0.857, z: 3.0036569}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1941485099786222453}
@@ -300,8 +300,8 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 2
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1941485099786222459
 MonoBehaviour:
@@ -322,6 +322,10 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  xHor: 2
+  yHor: 1
+  yBas: 2
+  basMult: 0.75
   moveSpeed: 275
   maxJumpSpeed: 3
   jumpForce: 20
@@ -331,8 +335,7 @@ MonoBehaviour:
   glideTimer: 2
   fallMultiplier: 1.5
   maxFallSpeed: -15
-  knockTime: 0
-  comptPlumes: 0
+  infiniteJump: 0
   toucheSaut: 32
   toucheGlide: 273
   toucheGlide2: 122
@@ -342,6 +345,12 @@ MonoBehaviour:
   wallCheckDownLeft: {fileID: 2409766048372675400}
   wallCheckUpRight: {fileID: 8098838808544265375}
   wallCheckDownRight: {fileID: 5683056708850350791}
+  defmat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  whiteMat: {fileID: 2100000, guid: 75ebfc09ccaea49728647a6b22506081, type: 2}
+  comptPlumes: 0
+  isInvincible: 0
+  canMove: 0
+  isGrounded: 0
 --- !u!60 &1263194920879927855
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -367,25 +376,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.49803394, y: 0.24741966}
+    - - {x: 0.49996722, y: 0.24990135}
       - {x: 0.41180545, y: 0.11717206}
       - {x: 0.006970644, y: 0.12799361}
       - {x: -0.08756286, y: 0.41932034}
       - {x: -0.3311168, y: 0.6168761}
       - {x: -0.5289139, y: 0.6158215}
-      - {x: -0.7482795, y: 0.41962263}
+      - {x: -0.7461881, y: 0.43880278}
+      - {x: -0.7503071, y: 0.43689832}
       - {x: -0.7383847, y: 0.20005184}
       - {x: -0.5873021, y: -0.21658903}
       - {x: -0.40531564, y: -0.69142556}
       - {x: -0.25814408, y: -1.0002332}
       - {x: 0.26063722, y: -0.9990306}
-      - {x: 0.3790862, y: -0.9318789}
+      - {x: 0.37188733, y: -0.93907773}
       - {x: 0.37638563, y: -0.74731195}
       - {x: 0.43092477, y: -0.59944296}
       - {x: 0.51391786, y: -0.44706637}
       - {x: 0.5653278, y: -0.3166488}
       - {x: 0.5784804, y: -0.23002127}
-      - {x: 0.5781313, y: 0.248932}
+      - {x: 0.6072235, y: 0.22905445}
+      - {x: 0.5781313, y: 0.2501377}
 --- !u!58 &9018800744166404994
 CircleCollider2D:
   m_ObjectHideFlags: 0
