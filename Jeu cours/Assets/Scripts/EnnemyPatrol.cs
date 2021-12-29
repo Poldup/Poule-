@@ -8,6 +8,7 @@ public class EnnemyPatrol : MonoBehaviour
     public Transform[] waypoints;
 
     public SpriteRenderer graphics;
+    public bool autoFlip;
     private Transform target;
     private int destPoint =0;
 
@@ -28,7 +29,10 @@ public class EnnemyPatrol : MonoBehaviour
         {
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
-            graphics.flipX = !graphics.flipX;
+            if (autoFlip)
+            {
+                graphics.flipX = !graphics.flipX;
+            }
         }
     }
 }
