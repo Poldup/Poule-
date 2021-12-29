@@ -36,7 +36,7 @@ public class PlayerControler : MonoBehaviour
     public Transform wallCheckUpRight;
     public Transform wallCheckDownRight;
 
-    private float axeHorizontal;
+    public float axeHorizontal;
     private float jumpTimer;
     private float currentGlideTimer;
     private float canJumpAgain = 0.2f;
@@ -50,10 +50,10 @@ public class PlayerControler : MonoBehaviour
     private bool isJumping;
     private bool isGliding;
     public bool isGrounded;
-    private bool onWallRight;
-    private bool onWallLeft;
-    private bool onWallRightRel;
-    private bool onWallLeftRel;
+    public bool onWallRight;
+    public bool onWallLeft;
+    public bool onWallRightRel;
+    public bool onWallLeftRel;
     private bool notKnocked;
     private Vector2 velocity = Vector2.zero;
     public bool infiniteJump;
@@ -120,22 +120,22 @@ public class PlayerControler : MonoBehaviour
     {
         bool sensGauche=true;
         //si la poule se d?place vers la droite ou la gauche, son gameobject se tourne dans cette direction, les d?tecteurs de murs relatifs sont permut?s si besoin car ils s'inversent lors du flip
-        if(_velocity > 0.1 && notKnocked)
+        if(axeHorizontal>0 && notKnocked)
         {
             poule.transform.localScale = new Vector3(-1, 1, 1);
-            sensGauche = true;
+            sensGauche = false;
         }
         
-        else if(_velocity < -0.1 && notKnocked)
+        else if(axeHorizontal<0 && notKnocked)
         {
             poule.transform.localScale = new Vector3(1, 1, 1);
-            sensGauche = false;
+            sensGauche = true;
         }
 
         if(sensGauche)
-        {onWallLeft = onWallRightRel; onWallRight = onWallLeftRel;}
+        {onWallLeft = onWallLeftRel; onWallRight = onWallRightRel;}
         else
-        {onWallRight = onWallRightRel; onWallLeft = onWallLeftRel;}
+        {onWallRight = onWallLeftRel; onWallLeft = onWallRightRel;}
     }
 
     void MovePlayer()
