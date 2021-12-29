@@ -12,12 +12,6 @@ public class PlayerControler : MonoBehaviour
     public SpriteRenderer sprite;
     [SerializeField] private LayerMask platformLayerMask;
 
-
-    public float xHor;
-    public float yHor;
-    public float yBas;
-    public float basMult;
-
     public float moveSpeed;
     public float maxJumpSpeed;
     public float jumpForce;
@@ -281,7 +275,15 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    public IEnumerator Knockback(Vector2 contact,bool knocking)
+    public void Damage(Vector2 contact, bool knocking)
+    {
+        if (!isInvincible)
+        {
+            StartCoroutine(Hit(contact, knocking));
+        }
+    }
+
+    public IEnumerator Hit(Vector2 contact,bool knocking)
     {
         if (isInvincible)
         { yield break; }
@@ -293,6 +295,7 @@ public class PlayerControler : MonoBehaviour
             GameManager.Instance.TakeDamage();
             StartCoroutine(blink);
             isInvincible = true;
+            Debug.Log(knocking);
             if (knocking)
             {
                 Vector2 knockDir;
@@ -335,9 +338,12 @@ public class PlayerControler : MonoBehaviour
                 }
                 rb.velocity = new Vector2(0, 0);
                 rb.AddForce(knockDir, ForceMode2D.Impulse);
+                yield return new WaitForSeconds(.5f);
             }
-            yield return new WaitForSeconds(.5f);
+            Debug.Log("weshh");
+            
             canMove = true;
+            Debug.Log("wesh");
             yield return new WaitForSeconds(1);
             isInvincible = false;
             

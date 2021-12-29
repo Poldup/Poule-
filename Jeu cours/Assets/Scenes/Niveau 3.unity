@@ -1994,7 +1994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 530417252}
   camFoActive: 0
-  player: {fileID: 0}
+  player: {fileID: 701318679}
   playerSpawn: {fileID: 222062072}
   musique: {fileID: 0}
   eggs: 0
