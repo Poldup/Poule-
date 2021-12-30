@@ -190,6 +190,7 @@ public class PlayerControler : MonoBehaviour
                 //la poule passe en ?tat de saut, le timer de saut commence ? z?ro, trigger de saut pour l'animator
                 isJumping = true;
                 jumpTimer = 0;
+                ResetAllTriggers();
                 animator.SetTrigger("Jump");
 
                 //rb.velocity = Vector2.zero; (NE SERT A RIEN ?)
@@ -252,32 +253,47 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    void ResetAllTriggers()
+    {
+        foreach (var param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+    }
+
     void Glide()
     {
         
         if(isGrounded)
         {
             currentGlideTimer = glideTimer;
+            animator.SetBool("Falling", false);
         }
         
         if (isGliding)
         {
             rb.velocity = new Vector2 (rb.velocity.x, - glideSpeed);
+            ResetAllTriggers();
             animator.SetTrigger("Gliding");
             currentGlideTimer = Mathf.Clamp(currentGlideTimer - Time.deltaTime, 0, glideTimer);
-            if (currentGlideTimer < glideTimer / 3)
+            if (currentGlideTimer < glideTimer / 2.1)
             {
+                ResetAllTriggers();
                 animator.SetTrigger("EndGlide");
             }
         }
         else
         {
+            ResetAllTriggers();
             animator.SetTrigger("StopGlide");
         }
         if(!isGrounded && currentGlideTimer==0)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y * 1.1f, maxFallSpeed, 0));
-            animator.SetTrigger("Falling");
+            animator.SetBool("Falling", true);
         }
     }
 
