@@ -21,6 +21,7 @@ public class Audio : MonoBehaviour
     void BigFlap()
     {
         bigflap.Play();
+        Debug.Log("bigflap");
     }
 }
 
