@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2562598486331301635}
   - component: {fileID: 2562598486331301692}
   - component: {fileID: 2562598486331301632}
+  - component: {fileID: -6993119360363759319}
   m_Layer: 0
   m_Name: Tronc qui attaque
   m_TagString: Untagged
@@ -179,3 +180,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6993119360363759319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562598486331301693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66db1e2cbc46b5b45bbd2b3848f27d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 500
+  knockbackTimer: 0.2
+  destroyOnCollision: 0
