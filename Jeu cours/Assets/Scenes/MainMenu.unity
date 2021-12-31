@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 314439941}
   - component: {fileID: 314439940}
   m_Layer: 5
-  m_Name: Text header
+  m_Name: Text footer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cr\xE9er par X & Y"
+  m_text: "Cr\xE9er par S\xE9bastien et L\xE9opold"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
