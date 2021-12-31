@@ -3421,8 +3421,10 @@ MonoBehaviour:
   pauseMenu: {fileID: 6655189746145221219}
   settingsMenu: {fileID: 1836929873890143449}
   mainMenuSceneName: MainMenu
-  nextSceneName: Niveau 2
+  nextSceneName: Niveau 3
   mix: {fileID: 24100000, guid: 8541de581cf214f1d8f1a3d9aba64275, type: 2}
+  musicSlider: {fileID: 2100754848907557153}
+  sfxSlider: {fileID: 1599132100547746749}
 --- !u!95 &216934371
 Animator:
   serializedVersion: 3

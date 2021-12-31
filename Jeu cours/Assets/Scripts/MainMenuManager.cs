@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -11,15 +12,20 @@ public class MainMenuManager : MonoBehaviour
 
     public string gameSceneName;
 
+    [HideInInspector]
     public int egg1;
-    public int egg2;
-    public int egg3;
-    public int totEgg1;
-    public int totEgg2;
-    public int totEgg3;
-    public bool isLevel2;
-    public bool isLevel3;
-    
+    [HideInInspector] public int egg2;
+    [HideInInspector] public int egg3;
+    [HideInInspector] public int totEgg1;
+    [HideInInspector] public int totEgg2;
+    [HideInInspector] public int totEgg3;
+    [HideInInspector] public bool isLevel2;
+    [HideInInspector] public bool isLevel3;
+    public AudioMixer mix;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
 
     void Start()
     {
@@ -34,6 +40,9 @@ public class MainMenuManager : MonoBehaviour
         egg3 = PlayerPrefs.GetInt("egg3", -1);
         isLevel2 = PlayerPrefs.GetInt("2",0) == 1 ;
         isLevel3 = PlayerPrefs.GetInt("3",0) == 1;
+        musicSlider.value = PlayerPrefs.GetInt("musicVol", 0);
+        sfxSlider.value= PlayerPrefs.GetInt("sfxVol", 0);
+
         Debug.Log(totEgg1);
         Debug.Log(egg1);
 
@@ -121,6 +130,23 @@ public class MainMenuManager : MonoBehaviour
     {
         if (isLevel3)
         { SceneManager.LoadScene("Niveau 3"); }
+    }
+
+    public void SetMusicVolume(float vol)
+    {
+        mix.SetFloat("MusicVol", vol);
+        PlayerPrefs.SetFloat("musicVol", vol);
+    }
+
+    public void SetSFXVolume(float vol)
+    {
+        mix.SetFloat("SFXVol", vol);
+        PlayerPrefs.SetFloat("sfxVol", vol);
+    }
+
+    public void SetUIVolume(float vol)
+    {
+        mix.SetFloat("UIVol", vol);
     }
 
 }
