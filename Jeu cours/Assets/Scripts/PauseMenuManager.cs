@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject settingsMenu;
     public string mainMenuSceneName;
     public string nextSceneName;
+    public AudioMixer mix;
 
     private bool paused = false;
 
@@ -72,5 +74,20 @@ public class PauseMenuManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void SetMusicVolume(float vol)
+    {
+        mix.SetFloat("MusicVol", vol);
+    }
+
+    public void SetSFXVolume(float vol)
+    {
+        mix.SetFloat("SFXVol", vol);
+    }
+
+    public void SetUIVolume(float vol)
+    {
+        mix.SetFloat("UIVol", vol);
     }
 }
