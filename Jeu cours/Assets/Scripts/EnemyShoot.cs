@@ -10,7 +10,13 @@ public class EnemyShoot : MonoBehaviour
     public float shootCooldown;
     public List<float> shootsAngle;
 
+    private AudioSource audioSource;
     private float shootTimer;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -24,6 +30,10 @@ public class EnemyShoot : MonoBehaviour
 
     private void Shoot()
     {
+        if(audioSource != null && shootsAngle.Count > 0)
+        {
+            audioSource.Play();
+        }
         foreach(float direction in shootsAngle)
         {
             GameObject bullet = Instantiate(bulletPrefabs, bulletSpawn.transform.position, transform.rotation);
