@@ -35,18 +35,18 @@ public class EndLevel : MonoBehaviour
         StartCoroutine(EndMenu());
         if (lvlnumber==1)
         {
-            int current =PlayerPrefs.GetInt("egg3", -1);
+            int current =PlayerPrefs.GetInt("egg1", -1);
             if (GameManager.Instance.eggs > current)
-            { PlayerPrefs.SetInt("egg3", GameManager.Instance.eggs); }
+            { PlayerPrefs.SetInt("egg1", GameManager.Instance.eggs); }
             Debug.Log(GameManager.Instance.eggs);
             PlayerPrefs.SetInt("totEgg1", eggTotal);
             PlayerPrefs.SetInt("2", 1);
         }
         if (lvlnumber == 2)
         {
-            int current = PlayerPrefs.GetInt("egg3", -1);
+            int current = PlayerPrefs.GetInt("egg2", -1);
             if (GameManager.Instance.eggs > current)
-            { PlayerPrefs.SetInt("egg3", GameManager.Instance.eggs); }
+            { PlayerPrefs.SetInt("egg2", GameManager.Instance.eggs); }
             Debug.Log(GameManager.Instance.eggs);
             PlayerPrefs.SetInt("totEgg2", eggTotal);
             PlayerPrefs.SetInt("3", 1);
