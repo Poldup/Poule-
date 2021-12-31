@@ -4,6 +4,9 @@ public class PickupEgg : MonoBehaviour
 {
     [HideInInspector]
     public bool canDo = true;
+    public AudioClip sound;
+    public float volume;
+    public AudioSource source;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +16,7 @@ public class PickupEgg : MonoBehaviour
             {
                 canDo = false;
                 GameManager.Instance.Pickoeuf(gameObject);
+                AudioManager.Instance.PlaySound(sound, volume);
                 gameObject.SetActive(false);
             }
         }

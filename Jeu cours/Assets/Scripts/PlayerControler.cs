@@ -173,7 +173,7 @@ public class PlayerControler : MonoBehaviour
             notKnocked = true;
         }
     }
-
+    
     void IsJumping()
     {
         //Si le joueur appuie sur espace, que le compteur de plumes dispo n'est pas ? 0 et que le timer pour sauter ? nouveau est ? z?ro, la poule va sauter
@@ -315,6 +315,7 @@ public class PlayerControler : MonoBehaviour
             blink = Blink();
             canMove = false;
             GameManager.Instance.TakeDamage();
+            transform.GetChild(0).gameObject.GetComponent<AudioPoule>().Hurt();
             StartCoroutine(blink);
             isInvincible = true;
             if (knocking)

@@ -10,7 +10,7 @@ public class AnimationManagement : MonoBehaviour
     public RuntimeAnimatorController life0;
     public RuntimeAnimatorController life1;
     public RuntimeAnimatorController life2;
-    public RuntimeAnimatorController next;
+    private RuntimeAnimatorController next;
 
     private void Start()
     {
