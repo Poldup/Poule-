@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2878825513246757925}
   - component: {fileID: -4898708487015920184}
+  - component: {fileID: 469192875}
+  - component: {fileID: 469192874}
   m_Layer: 0
   m_Name: Son scie
   m_TagString: Untagged
@@ -163,3 +165,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &469192875
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759652692271545244}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.98
+--- !u!114 &469192874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759652692271545244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faad5aea382bb4aff96206bfa47d4d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coupe: {fileID: 8300000, guid: ffa68f5b67d6d49e38dfa07354363f93, type: 3}
+  idle: {fileID: 8300000, guid: 47e1276588cc545ec8d80722bfc00e63, type: 3}
+  source: {fileID: -4898708487015920184}
