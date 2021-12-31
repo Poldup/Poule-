@@ -134,6 +134,10 @@ public class MainMenuManager : MonoBehaviour
 
     public void SetMusicVolume(float vol)
     {
+        if (vol == -50)
+        {
+            vol = -80;
+        }
         mix.SetFloat("MusicVol", vol);
         PlayerPrefs.SetFloat("musicVol", vol);
     }
