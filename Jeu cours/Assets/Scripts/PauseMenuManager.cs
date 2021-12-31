@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -10,11 +11,18 @@ public class PauseMenuManager : MonoBehaviour
     public string nextSceneName;
     public AudioMixer mix;
 
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
     private bool paused = false;
 
     void Start()
     {
         ResumeGame();
+        mix.GetFloat("MusicVol", out float musicVolVal);
+        musicSlider.value = musicVolVal;
+        mix.GetFloat("SFXVol", out float SFXVolVal);
+        sfxSlider.value = SFXVolVal;
     }
 
     void Update()
@@ -79,11 +87,17 @@ public class PauseMenuManager : MonoBehaviour
     public void SetMusicVolume(float vol)
     {
         mix.SetFloat("MusicVol", vol);
+        PlayerPrefs.SetFloat("musicVol", vol);
     }
 
     public void SetSFXVolume(float vol)
     {
+        if (vol == -30)
+        {
+            vol = -80;
+        }
         mix.SetFloat("SFXVol", vol);
+        PlayerPrefs.SetFloat("sfxVol", vol);
     }
 
     public void SetUIVolume(float vol)
