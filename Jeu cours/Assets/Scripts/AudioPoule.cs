@@ -44,7 +44,6 @@ public class AudioPoule : MonoBehaviour
     public void Hurt()
     {
         int num = Random.Range(0, 2);
-        Debug.Log(num);
         hurtAudio.clip = hurt[num];
         hurtAudio.volume = .3f;
         hurtAudio.Play();

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3712964103565645794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3712964103565645792}
+  - component: {fileID: 3712964103565645793}
+  - component: {fileID: 3712964103565645807}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3712964103565645792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712964103565645794}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3712964103565645793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712964103565645794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6c7989d7a87444cb8000c275ce862f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  camFoActive: 0
+  player: {fileID: 0}
+  playerSpawn: {fileID: 0}
+  musique: {fileID: 0}
+  eggs: 0
+  goldenPlumes: 0
+  plumes: 3
+  musicOn: 0
+  lives: 0
+  heart: 0
+  loosingLife: 0
+  pickedEggs: []
+  pickedGFeathers: []
+--- !u!114 &3712964103565645807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712964103565645794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417526a29ddf348858f512bfa50fd39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundMixerGroup: {fileID: 0}
+  flap1: {fileID: 8300000, guid: 27e88beb3de3f16438b73a0960a171ac, type: 3}
+  flap2: {fileID: 8300000, guid: 60af83db50475f3478820768261b82c0, type: 3}
+  bigflap: {fileID: 8300000, guid: 63709f937cc488448896bce389c9ecb2, type: 3}
+  hurt1: {fileID: 8300000, guid: 09912c6b30a914100a7d439d27c657fc, type: 3}
+  hurt2: {fileID: 8300000, guid: c58318873c3ca4416a9cee89702e3c44, type: 3}
+  walk:
+  - {fileID: 8300000, guid: 6b8f6a64dc0a245e2a72d11b3285c349, type: 3}
+  - {fileID: 8300000, guid: e17b8712f92684aaabab01c13b036400, type: 3}
+  - {fileID: 8300000, guid: 7bc0a6c94ad1b46c78178623c74dec96, type: 3}
+  - {fileID: 8300000, guid: 624f3b99eee8c4281a2bd6b73ee49a5c, type: 3}
+  pouleAudio: {fileID: 0}
