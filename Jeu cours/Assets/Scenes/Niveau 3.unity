@@ -18414,7 +18414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 530417252}
   camFoActive: 0
-  player: {fileID: 0}
+  player: {fileID: 578410966}
   playerSpawn: {fileID: 222062072}
   musique: {fileID: 0}
   eggs: 0
@@ -18452,7 +18452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417526a29ddf348858f512bfa50fd39d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundMixerGroup: {fileID: 0}
+  soundMixerGroup: {fileID: 4088517868307408370, guid: 8541de581cf214f1d8f1a3d9aba64275, type: 2}
   flap1: {fileID: 8300000, guid: 27e88beb3de3f16438b73a0960a171ac, type: 3}
   flap2: {fileID: 8300000, guid: 60af83db50475f3478820768261b82c0, type: 3}
   bigflap: {fileID: 8300000, guid: 63709f937cc488448896bce389c9ecb2, type: 3}
@@ -26155,6 +26155,10 @@ PrefabInstance:
     - target: {fileID: 926200655, guid: aa4be492afde71248a1895fc9a7c3640, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599132100547746749, guid: aa4be492afde71248a1895fc9a7c3640, type: 3}
+      propertyPath: m_MinValue
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7805992804798535021, guid: aa4be492afde71248a1895fc9a7c3640, type: 3}
       propertyPath: m_Pivot.x

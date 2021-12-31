@@ -92,6 +92,10 @@ public class PauseMenuManager : MonoBehaviour
 
     public void SetSFXVolume(float vol)
     {
+        if (vol == -30)
+        {
+            vol = -80;
+        }
         mix.SetFloat("SFXVol", vol);
         PlayerPrefs.SetFloat("sfxVol", vol);
     }
