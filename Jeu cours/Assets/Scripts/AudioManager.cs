@@ -35,28 +35,5 @@ public class AudioManager : MonoBehaviour
     }
     
 
-    void Flap1()
-    {
-        pouleAudio.clip = flap1;
-        pouleAudio.Play();
-    }
-
-    void Flap2()
-    {
-        pouleAudio.clip = flap2;
-        pouleAudio.Play();
-    }
-
-    void BigFlap()
-    {
-        pouleAudio.clip = bigflap;
-        pouleAudio.Play();
-    }
-
-    void Walk()
-    {
-        int num = Random.Range(0, 3);
-        pouleAudio.clip = walk[num];
-        pouleAudio.Play();
-    }
+    
 }
