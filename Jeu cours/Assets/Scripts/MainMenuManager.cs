@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject settingsMenu;
     public GameObject levelSelection;
+    public GameObject sure;
 
     public string gameSceneName;
 
@@ -32,20 +33,26 @@ public class MainMenuManager : MonoBehaviour
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
         levelSelection.SetActive(false);
+        sure.SetActive(false);
+        AssignPlayerPrefs();
+
+        Debug.Log(totEgg1);
+        Debug.Log(egg1);
+
+    }
+
+    public void AssignPlayerPrefs()
+    {
         totEgg1 = PlayerPrefs.GetInt("totEgg1", -1);
         totEgg2 = PlayerPrefs.GetInt("totEgg2", -1);
         totEgg3 = PlayerPrefs.GetInt("totEgg3", -1);
         egg1 = PlayerPrefs.GetInt("egg1", -1);
         egg2 = PlayerPrefs.GetInt("egg2", -1);
         egg3 = PlayerPrefs.GetInt("egg3", -1);
-        isLevel2 = PlayerPrefs.GetInt("2",0) == 1 ;
-        isLevel3 = PlayerPrefs.GetInt("3",0) == 1;
+        isLevel2 = PlayerPrefs.GetInt("2", 0) == 1;
+        isLevel3 = PlayerPrefs.GetInt("3", 0) == 1;
         musicSlider.value = PlayerPrefs.GetInt("musicVol", 0);
-        sfxSlider.value= PlayerPrefs.GetInt("sfxVol", 0);
-
-        Debug.Log(totEgg1);
-        Debug.Log(egg1);
-
+        sfxSlider.value = PlayerPrefs.GetInt("sfxVol", 0);
     }
 
     public void StartGame()
@@ -69,6 +76,7 @@ public class MainMenuManager : MonoBehaviour
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
         levelSelection.SetActive(false);
+        sure.SetActive(false);
     }
 
     public void OpenLevelSelection()
@@ -156,5 +164,24 @@ public class MainMenuManager : MonoBehaviour
     {
         mix.SetFloat("UIVol", vol);
     }
+
+    public void ResetAllVerif()
+    {
+        sure.SetActive(true);
+    }
+
+    public void NotSure()
+    {
+        sure.SetActive(false);
+    }
+
+    public void ResetAll()
+    {
+        PlayerPrefs.DeleteAll();
+        sure.SetActive(false);
+        AssignPlayerPrefs();
+        OpenLevelSelection();
+    }
+
 
 }
